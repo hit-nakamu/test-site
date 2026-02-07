@@ -1,265 +1,99 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>居合 ― 動の中に宿る静けさ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    :root {
-      --bg-color: #f5f5f7;
-      --card-bg: #ffffff;
-      --text-main: #222222;
-      --text-sub: #555555;
-      --accent: #004b8d; /* 仕事ページと揃える想定の落ち着いたブルー */
-      --border-soft: #dddddd;
-      --max-width: 960px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.7;
-    }
-
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border-soft);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .site-title {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 12px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.95rem;
-    }
-
-    .site-title span {
-      font-weight: 600;
-      letter-spacing: 0.08em;
-    }
-
-    nav a {
-      margin-left: 16px;
-      text-decoration: none;
-      color: var(--text-sub);
-      font-size: 0.9rem;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    main {
-      max-width: var(--max-width);
-      margin: 24px auto 40px;
-      padding: 0 16px;
-    }
-
-    .page-header {
-      margin-bottom: 24px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border-soft);
-    }
-
-    .page-header h1 {
-      margin: 0 0 4px;
-      font-size: 1.6rem;
-      letter-spacing: 0.08em;
-    }
-
-    .page-header .subtitle {
-      font-size: 0.9rem;
-      color: var(--text-sub);
-    }
-
-    .tagline {
-      margin-top: 8px;
-      font-size: 0.9rem;
-      color: var(--accent);
-    }
-
-    section {
-      background: var(--card-bg);
-      border-radius: 8px;
-      padding: 20px 18px;
-      margin-bottom: 16px;
-      border: 1px solid #e5e5e8;
-    }
-
-    section h2 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 1.1rem;
-      border-left: 4px solid var(--accent);
-      padding-left: 8px;
-    }
-
-    section p {
-      margin: 0 0 10px;
-      font-size: 0.95rem;
-      color: var(--text-main);
-    }
-
-    .section-note {
-      font-size: 0.85rem;
-      color: var(--text-sub);
-    }
-
-    .divider {
-      height: 1px;
-      background: var(--border-soft);
-      margin: 16px 0;
-    }
-
-    .highlight {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    footer {
-      max-width: var(--max-width);
-      margin: 0 auto 24px;
-      padding: 0 16px;
-      font-size: 0.8rem;
-      color: var(--text-sub);
-    }
-
-    @media (max-width: 600px) {
-      .site-title {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-right: 12px;
-      }
-
-      .page-header h1 {
-        font-size: 1.4rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<title>居合 - 仁</title>
+<style>
+    body { font-family: sans-serif; margin: 0; background: #f5f5f5; color: #333; }
+    header { background: #0F2A43; color: #fff; padding: 40px 20px; text-align: center; }
+    section { padding: 40px 20px; max-width: 900px; margin: auto; background: #fff; margin-top: 20px; border-radius: 8px; line-height: 1.8; }
+    h2 { border-left: 6px solid #0F2A43; padding-left: 10px; margin-top: 0; }
+    h3 { margin-top: 30px; }
+    a { color: #0F2A43; }
+</style>
 </head>
 <body>
-  <header>
-    <div class="site-title">
-      <span>JIN PORTFOLIO</span>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="work.html">Work</a>
-        <a href="iai.html">Iaido</a>
-        <!-- 必要に応じて他ページも -->
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <div class="page-header">
-      <h1>居合 ― 動の中に宿る静けさ</h1>
-      <div class="subtitle">生き方を考え、自分と向き合う時間</div>
-      <div class="tagline">派手ではない、けれど確かに力強い動き。</div>
-    </div>
+<header>
+    <h1>居合</h1>
+    <p><a href="index.html" style="color:#fff;">← トップへ戻る</a></p>
+</header>
 
-    <section id="intro">
-      <h2>はじめに</h2>
-      <p>
-        居合を始めたのは、コロナ明けのある日でした。無理のない範囲で体を動かしたい、
-        そして自分の生活圏の中で続けられるものを探したい。そんな思いで調べていたときに出会ったのが、
-        <span class="highlight">鵬玉会</span> でした。
-      </p>
-      <p>
-        もともと「道」のつくものに惹かれる性格もあり、自然と居合道へと足が向いていきました。
-        そこからの時間は、単なる稽古ではなく、自分の生き方を整える旅のようなものになっています。
-      </p>
-    </section>
+<section>
+    <h2>はじめに</h2>
+    <p>
+        居合を始めたのは、コロナ明けに「無理のない範囲で体を動かしたい」と思ったことがきっかけでした。
+        自宅の近くで続けられるものを探していたときに<strong>鵬玉会</strong>を知り、
+        もともと「道」のつくものに興味があったこともあり、自然と居合道へと惹かれていきました。<br><br>
 
-    <section id="practice">
-      <h2>稽古で大切にしていること</h2>
-      <p>
-        居合の稽古では、<span class="highlight">呼吸</span>、<span class="highlight">間合い</span>、
-        そして体の隅々まで意識を行き渡らせることを大切にしています。
-        どの瞬間も「誰に見られても恥ずかしくない美しい所作」であることを目指し、
-        動きの一つひとつに意味と理合いを求めています。
-      </p>
-      <p>
-        形であっても、そこに確かに相手がいるつもりで斬れているか。技として成立しているか。
-        そうした意識を持つために、稽古には極力稽古着のまま向かい、
-        道場に入る前からすでに稽古が始まっているつもりで臨んでいます。
-      </p>
-      <p class="section-note">
+        稽古を重ねる中で、居合は単なる運動ではなく、
+        <strong>自分の生き方を整える時間</strong>へと変わっていきました。
+    </p>
+</section>
+
+<section>
+    <h2>稽古で大切にしていること</h2>
+    <p>
+        稽古では、<strong>呼吸・間合い・体の隅々まで意識を行き渡らせること</strong>を大切にしています。
+        どの瞬間も「誰に見られても美しい所作」であることを目指し、
+        動きの一つひとつに理合いを求めています。<br><br>
+
+        形であっても、そこに相手がいるつもりで斬れているか。
+        技として成立しているか。<br>
+        その意識を保つために、稽古には極力<strong>稽古着のまま向かい</strong>、
+        道場に入る前からすでに稽古が始まっているつもりで臨んでいます。<br><br>
+
         内弟子として見られている自覚を持つことで、所作や心構えが自然と整っていきます。
-      </p>
-    </section>
+    </p>
+</section>
 
-    <section id="change">
-      <h2>居合がもたらした変化</h2>
-      <p>
-        居合を続ける中で、最も大きく変わったのは<span class="highlight">心</span>です。
-        もともと自分の弱さ、とくに心の弱さを克服したいという思いがありました。
-        しかし、克服以前にまず必要だったのは、心を落ち着かせることでした。
-      </p>
-      <p>
-        稽古を重ねるうちに、呼吸が整い、心が静まり、少しずつですが自分を見つめる余裕が生まれてきました。
-        その結果、以前よりも胸を張って立てるようになり、自信の芽のようなものが育ち始めています。
-      </p>
-    </section>
+<section>
+    <h2>居合がもたらした変化</h2>
+    <p>
+        居合を続ける中で最も大きく変わったのは<strong>心</strong>です。<br>
+        もともと自分の弱さ、特に心の弱さを克服したいという思いがありましたが、
+        稽古を通してまず必要だったのは<strong>心を落ち着かせること</strong>でした。<br><br>
 
-    <section id="daily-life">
-      <h2>日常と仕事への影響</h2>
-      <p>
-        居合の稽古は、道場の中だけで完結するものではありません。日常生活や仕事の場面でも、
-        その影響を強く感じます。
-      </p>
-      <p>
-        特に大きいのは、<span class="highlight">平常心</span>と<span class="highlight">余裕</span>です。
-        どんな状況でも心のどこかに静かな空白があり、そこから自分を客観視できるようになりました。
-        緊張する場面でも呼吸を整え、落ち着いて判断できる。これは居合を通して得た大きな財産です。
-      </p>
-    </section>
+        呼吸が整い、心が静まり、少しずつ自分を見つめる余裕が生まれたことで、
+        以前よりも胸を張って立てるようになり、自信の芽が育ち始めています。
+    </p>
+</section>
 
-    <section id="attraction">
-      <h2>居合の魅力</h2>
-      <p>
-        居合の魅力を一言で表すなら、
-        <span class="highlight">「生き方を考え、自分と向き合う時間」</span>です。
-        刀を抜き、納めるという一連の動きの中に、自分の弱さや迷いがそのまま映し出されます。
-      </p>
-      <p>
-        だからこそ、稽古は常に自分自身との対話であり、心と体を整える時間になります。
-      </p>
-    </section>
+<section>
+    <h2>日常と仕事への影響</h2>
+    <p>
+        居合の稽古は、道場の中だけで完結するものではありません。<br>
+        日常生活や仕事の場面でも、その影響を強く感じます。<br><br>
 
-    <section id="closing">
-      <h2>おわりに</h2>
-      <p>
-        居合は、派手さこそありませんが、動きの中に確かな力強さが宿る武道です。
-        静けさと緊張感が同居するその世界は、日々の生活に凛とした軸を与えてくれます。
-      </p>
-      <p>
-        これからも、所作を磨き、心を整え、自分と向き合い続けるために、
+        特に大きいのは<strong>平常心</strong>と<strong>余裕</strong>です。<br>
+        どんな状況でも心のどこかに静かな空白があり、
+        そこから自分を客観視できるようになりました。<br><br>
+
+        緊張する場面でも呼吸を整え、落ち着いて判断できるようになったことは、
+        居合を通して得た大きな財産です。
+    </p>
+</section>
+
+<section>
+    <h2>居合の魅力</h2>
+    <p>
+        居合の魅力を一言で表すなら、<strong>「生き方を考え、自分と向き合う時間」</strong>です。<br>
+        刀を抜き、納めるという一連の動きの中に、自分の弱さや迷いが映し出されます。<br><br>
+
+        だからこそ稽古は常に自分自身との対話であり、心と体を整える時間になります。
+    </p>
+</section>
+
+<section>
+    <h2>おわりに</h2>
+    <p>
+        居合は派手さこそありませんが、動きの中に確かな力強さが宿る武道です。<br>
+        静けさと緊張感が同居するその世界は、日々の生活に凛とした軸を与えてくれます。<br><br>
+
+        これからも所作を磨き、心を整え、自分と向き合い続けるために、
         居合という道を歩んでいきます。
-      </p>
-    </section>
+    </p>
+</section>
 
-    <div class="divider"></div>
-  </main>
-
-  <footer>
-    © JIN / Iaido Page
-  </footer>
 </body>
 </html>
