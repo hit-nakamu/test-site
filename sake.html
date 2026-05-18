@@ -18,6 +18,7 @@
             line-height: 1.8;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         header {
             max-width: 800px;
@@ -44,6 +45,13 @@
             padding: 0 15px;
             box-sizing: border-box;
         }
+        @keyframes pageFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-section {
+            animation: pageFadeIn 1.2s ease-out forwards;
+        }
         section {
             background-color: var(--card-bg);
             padding: 35px;
@@ -63,7 +71,7 @@
             height: 200px;
             object-fit: cover;
             border-radius: 6px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             border: 1px solid #333;
         }
         .sake-list {
@@ -72,7 +80,7 @@
             gap: 12px;
             padding: 0;
             list-style: none;
-            margin-top: 20px;
+            margin: 20px 0;
         }
         .sake-item {
             background-color: #252525;
@@ -86,7 +94,7 @@
         }
         @media (max-width: 480px) {
             section { padding: 20px; }
-            .sake-list { grid-template-columns: repeat(2, 1fr); } /* スマホで綺麗に2列に並ぶ */
+            .sake-list { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -97,17 +105,25 @@
         <a href="index.html" class="back-link">← トップへ戻る</a>
     </header>
 
-    <main>
+    <main class="animate-section">
         <img src="https://images.unsplash.com/photo-1609951651556-5334e2706168?q=80&w=800" alt="Japanese Sake" class="sake-banner">
 
         <section>
-            <h2>日本酒への探究と、共有のひととき</h2>
-            <p>日本酒とウイスキーを特に好みますが、それは単なる嗜好品としてだけでなく、銘柄の背景にあるストーリーや、その日いただく食事とのペアリングを「探究」することを含めて楽しんでいます。</p>
-            <p>日本酒は妻とも共通の趣味になっており、私の誕生日に越後湯沢へ一緒に酒探しの旅に出かけたのは、とても素晴らしい思い出です。</p>
+            <h2>お酒を通じて、文化と時間を深く探く味わう</h2>
+            <p>日本酒とスコッチウイスキーを特に嗜みます。私にとってお酒を飲むということは、単に酔うための行為ではなく、そのボトルが生まれるまでの伝統的なストーリー、蔵人のこだわり、そしてその日の料理との「至高のペアリング」をロジカルに探求する知的な冒険でもあります。</p>
+            <p>そして何より、お酒は大切な人との対話を豊かにしてくれる最高の媒介です。我が家では日本酒が夫婦共通の深い趣味になっており、週末に新しく手に入れた一本を開け、その味わいについて語り合う時間を何より大切にしています。</p>
+        </section>
+
+        <section style="border-left: 2px solid var(--accent-color); background: #161616;">
+            <h2>忘れられない思い出：誕生日サプライズ酒探しの旅</h2>
+            <p>これまでの日本酒ライフの中で最高の思い出となっているのは、私の誕生日に妻が企画してくれたサプライズ旅行です。</p>
+            <p>当日、行き先を一切告げられないまま新幹線に乗せられ、到着した先は雪国・新潟の<strong>「越後湯沢」</strong>でした。駅にある「ぽんしゅ館」で数々の銘酒を驚きと共にテイスティングし、地元の酒屋を巡りながら最高の隠れた地酒を探索したあの時間は、今でも夫婦の宝物です。お酒そのものの美味しさはもちろんですが、その移動のプロセス、旅の空気感すべてが、日本酒への愛着をさらに深いものにしてくれました。</p>
         </section>
 
         <section>
-            <h2>お気に入りの銘柄</h2>
+            <h2>これまでの探究（お気に入りの銘柄）</h2>
+            <p>すっきりとした淡麗辛口から、華やかなフルーティ系まで、作り手の個性が光る銘柄を幅広くコレクション・テイスティングしてきました。</p>
+            
             <ul class="sake-list">
                 <li class="sake-item">田酒</li>
                 <li class="sake-item">鳳凰美田</li>
@@ -116,6 +132,9 @@
                 <li class="sake-item">十四代</li>
                 <li class="sake-item">獺祭</li>
             </ul>
+            
+            <p style="margin-top: 25px;">実は、これほど多くの素晴らしいお酒に巡り合いながらも、私の心の中で<strong>「この一本で人生が完全に変わった！」と言い切れる究極の『運命の1本』には、まだ出会っていません。</strong></p>
+            <p>しかし、だからこそ面白い。妻と共に「まだ見ぬ至高の1本」を求め、エピソードや料理との相性を探究し、語り合う。その果てしないプロセスそのものこそが、私の人生を豊かにしてくれる、何よりの美味しい贅沢なのだと感じています。</p>
         </section>
     </main>
 </body>
