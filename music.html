@@ -18,6 +18,7 @@
             line-height: 1.8;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         header {
             max-width: 800px;
@@ -44,6 +45,13 @@
             padding: 0 15px;
             box-sizing: border-box;
         }
+        @keyframes pageFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-section {
+            animation: pageFadeIn 1.2s ease-out forwards;
+        }
         section {
             background-color: var(--card-bg);
             padding: 35px;
@@ -63,12 +71,10 @@
             height: 220px;
             object-fit: cover;
             border-radius: 6px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             border: 1px solid #333;
         }
-        @media (max-width: 480px) {
-            section { padding: 20px; }
-        }
+        @media (max-width: 480px) { section { padding: 20px; } }
     </style>
 </head>
 <body>
@@ -78,13 +84,26 @@
         <a href="index.html" class="back-link">← トップへ戻る</a>
     </header>
 
-    <main>
+    <main class="animate-section">
         <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=800" alt="Musical Instrument" class="music-img">
 
         <section>
-            <h2>音を紡ぎ、場を整える</h2>
-            <p>私にとって音楽は、単に聴いて楽しむだけの受動的なものではなく、空間や表現をクリエイトするための大切な要素です。</p>
-            <p>背景としてピアノやトランペットの演奏経験があり、そこから「音全般」への深い興味へと広がっていきました。これまでに、10人強のアンサンブルの編曲を手掛けたり、居合の大会において全体の緊張感と高揚感をコントロールする音響担当を務めたりといった活動も行っています。</p>
+            <h2>音を紡ぎ、その場の「空気」をコントロールする</h2>
+            <p>私にとって音楽とは、単に聴いてリラックスするだけの受動的な趣味ではなく、空間の雰囲気や人の感情をデザインするための大切なクリエイティブ・ツールです。</p>
+            <p>幼少期からのピアノ経験や、学生時代から吹奏楽で向き合ってきたトランペットの演奏経験が私の音楽的ルーツです。それぞれの楽器が持つ音の特性や役割をロジカルに理解する視点は、現在でも形を変えて様々な活動に活きています。</p>
+        </section>
+
+        <section>
+            <h2>「編曲」と「音響演出」へのこだわり</h2>
+            <p>ただ楽器を演奏するだけでなく、「全体の調和を創り出す」ことに深いおもしろさを感じています。</p>
+            <p>これまでに、10人強の規模の管楽器アンサンブルにおいて、個々の楽器の良さを最大限に引き出す<strong>本格的なアレンジ（編曲）</strong>を担当。それぞれの音が美しく重なり合い、ひとつの世界観を紡ぎ出すプロセスは、エンジニアとしての全体最適なシステム構築に通じるものがあります。</p>
+            <p>また、ライフワークである居合道の大きな大会においては、会場の<strong>「音響チーフ（演出マネジメント）」</strong>を任されています。武道独特の「ピンと張り詰めた静寂」と「演武が始まった瞬間の爆発的な高揚感」。この見えない空気の波を音のタイミングとボリューム一つでコントロールし、演者と観客が極限まで没入できる「場」を黒子としてプロデュースしています。</p>
+        </section>
+
+        <section>
+            <h2>日常を彩るプレイリスト</h2>
+            <p>お気に入りのジャンルは、エネルギッシュなロックから、脳をクリアにしてくれるエレクトロニカ、そして究極のリラクゼーションであるアンビエント（環境音楽）まで多岐にわたります。</p>
+            <p>何かに深く集中してロジックを組み立てる仕事中や、頭を一心に空っぽにする居合の稽古前、あるいは自宅で家族と心地よい時間を過ごすとき。その瞬間、その空間に最も調和する音をセレクトし、日常のパフォーマンスを最適化しています。</p>
         </section>
     </main>
 </body>
