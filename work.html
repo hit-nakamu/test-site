@@ -1,105 +1,178 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>仕事 - 仁</title>
-<style>
-    body { font-family: sans-serif; margin: 0; background: #f5f5f5; color: #333; }
-    header { background: #222; color: #fff; padding: 40px 20px; text-align: center; }
-    section { padding: 40px 20px; max-width: 900px; margin: auto; background: #fff; margin-top: 20px; border-radius: 8px; line-height: 1.8; }
-    h2 { border-left: 6px solid #C3002F; padding-left: 10px; margin-top: 0; } /* 日産レッド */
-    h3 { margin-top: 30px; }
-    ul { padding-left: 20px; }
-    a { color: #C3002F; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仕事 - 仁</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --accent-color: #c9a063;
+            --card-bg: #1e1e1e;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px 20px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+        }
+        .back-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto 60px auto;
+            padding: 0 20px;
+        }
+        section {
+            background-color: var(--card-bg);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .erg-section {
+            border: 1px solid var(--accent-color);
+            background: linear-gradient(180deg, #1e1e1e 0%, #25211a 100%);
+        }
+        h2 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin-top: 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        .timeline-item {
+            border-left: 2px solid var(--accent-color);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+        .time {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        .job-title {
+            color: #ffffff;
+            margin: 5px 0 10px 0;
+            font-size: 1.1rem;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <h1>仕事</h1>
-    <p><a href="index.html" style="color:#fff;">← トップへ戻る</a></p>
-</header>
+    <header>
+        <h1>Work / Career</h1>
+        <a href="index.html" class="back-link">← トップへ戻る</a>
+    </header>
 
-<section>
-    <h2>プロフィール</h2>
-    <p>
-        2011年に<strong>日産自動車株式会社</strong>へ入社して以来、パワートレイン領域を中心に
-        <strong>生産技術・設備開発・DX推進・SCMシステム開発</strong>と幅広い領域でキャリアを積んできました。<br><br>
+    <main>
+        <section>
+            <h2>プロフィール</h2>
+            <p>2011年に<strong>日産自動車株式会社</strong>へ入社して以来、パワートレイン領域を中心に、生産技術・設備開発・DX推進・SCMシステム開発と幅広い領域でキャリアを積んしてきました。</p>
+            <p>一貫して<strong>「現場のリアル」と「デジタルの力」をつなぐ仕事</strong>に取り組み、技術と人が共に成長できる環境づくりを目指しています。</p>
+        </section>
 
-        エンジン組立ラインの立ち上げ、全固体電池（ASSB）設備開発、部門DX戦略の策定、
-        そして現在の生産SCM領域での設備稼働監視システム開発まで、<br>
-        一貫して<strong>「現場のリアル」と「デジタルの力」をつなぐ仕事</strong>に取り組んでいます。<br><br>
+        <section class="erg-section">
+            <h2>System Thinking in Community（DEI活動）</h2>
+            <p>2024年より、会社公認の有志団体「育児両立ERG」を立ち上げ、代表を務めています。現在は約330名が所属する社内最大規模のERGへと成長しました。</p>
+            <p>このコミュニティの立ち上げ・運営においては、エンジニアとして培った<strong>システム思考と戦略的アプローチ</strong>をフルに転用しました。発足時に掲げたビジョンと、その指針となる「3本柱」を論理的に構造化したことで、持続可能で熱量のある組織設計を実践しています。</p>
+        </section>
 
-        日産という大規模な製造現場で培った経験を活かし、技術と人が共に成長できる環境づくりを目指しています。
-    </p>
+        <section>
+            <h2>経歴</h2>
+            
+            <div class="timeline-item">
+                <span class="time">2011年〜</span>
+                <h3 class="job-title">エンジン生産技術（いわき工場）</h3>
+                <p>V6エンジン組立ラインの生産技術員として、現行ラインの維持・改善、新規ライン立ち上げを担当。品質・コスト・納期の最適化に取り組みました。</p>
+            </div>
 
-    <h3>保有資格</h3>
-    <ul>
-        <li>第一級陸上特殊無線技士</li>
-        <li>第三級海上特殊無線技士</li>
-        <li>高等学校教諭免許状（情報）</li>
-    </ul>
-</section>
+            <div class="timeline-item">
+                <span class="time">2015年〜</span>
+                <h3 class="job-title">設備システム・PDM導入・シミュレーション推進</h3>
+                <p>設備システムグループ、のちにパワートレイン技術企画部にて、PDM導入企画・実行を担当。設備・ラインの3Dシミュレーション適用を拡大し、生産技術領域のデジタル化を推進しました。</p>
+            </div>
 
-<section>
-    <h2>経歴</h2>
+            <div class="timeline-item">
+                <span class="time">2020年〜</span>
+                <h3 class="job-title">ASSB生産設備開発（グループ総括）</h3>
+                <p>全固体電池（ASSB）生産設備の開発を担当し、グループを総括。製品開発と設備開発を並行して進める難易度の高い領域で、セル工程以降の設備開発をリードしました。</p>
+            </div>
 
-    <h3>2011年〜：エンジン生産技術（いわき工場）</h3>
-    <p>
-        日産自動車株式会社 パワートレイン生産技術部としていわき工場へ赴任。<br>
-        V6エンジン組立ラインの生産技術員として、<br>
-        <strong>現行ラインの維持・改善、新規ライン立ち上げ</strong>を担当。<br>
-        現場と密に向き合いながら、品質・コスト・納期の最適化に取り組みました。
-    </p>
+            <div class="timeline-item">
+                <span class="time">2023年〜</span>
+                <h3 class="job-title">DX推進（デジタル戦略の策定と実行）</h3>
+                <p>部門のDX推進部署にて、デジタル戦略の立案、実現に向けた方策の計画・実行を担当。現場の課題を丁寧に拾いながら、実効性の高いデジタル技術導入を推進しました。</p>
+            </div>
 
-    <h3>2015年〜：設備システム・PDM導入・シミュレーション推進</h3>
-    <p>
-        設備システムグループへ異動し、<strong>PDM導入企画・実行</strong>を担当。<br>
-        設備・ラインの3Dシミュレーション適用を拡大し、生産技術領域のデジタル化を推進。<br>
-        2018年の組織変更後はパワートレイン技術企画部に所属し、技術基盤の整備に貢献しました。
-    </p>
+            <div class="timeline-item">
+                <span class="time">2025年〜</span>
+                <h3 class="job-title">生産SCM領域（設備稼働監視システム開発）</h3>
+                <p>情報システム部門にて、生産工場の設備稼働状態の見える化システムを開発。グループのリソースマネジメントも担っています。</p>
+            </div>
+        </section>
 
-    <h3>2020年〜：ASSB生産設備開発（グループ総括）</h3>
-    <p>
-        全固体電池（ASSB）生産設備の開発を担当し、グループを総括。<br>
-        製品開発と設備開発を並行して進める難易度の高い領域で、<br>
-        主に<strong>セル工程以降の設備開発</strong>をリードしました。
-    </p>
+        <section>
+            <h2>保有資格</h2>
+            <ul>
+                <li>第一級陸上特殊無線技士</li>
+                <li>第三級海上特殊無線技士</li>
+                <li>高等学校教諭免許状（情報）</li>
+            </ul>
+        </section>
 
-    <h3>2023年〜：DX推進（デジタル戦略の策定と実行）</h3>
-    <p>
-        部門のDX推進部署に異動。<br>
-        <strong>デジタル戦略の立案、実現に向けた方策の計画・実行</strong>を担当。<br>
-        現場の課題を丁寧に拾いながら、デジタル技術の導入を推進しました。
-    </p>
+        <section>
+            <h2>仕事で大切にしていること</h2>
+            <ul>
+                <li>現場の声を丁寧に拾い、技術と人をつなぐこと</li>
+                <li>システム思考で全体最適を見据え、組織や関係性を構築すること</li>
+                <li>「使いたくなる仕組み・持続するコミュニティ」をつくること</li>
+                <li>チームが健全に、心に余裕を持って働ける環境づくり</li>
+            </ul>
+        </section>
+    </main>
 
-    <h3>2025年〜：生産SCM領域（設備稼働監視システム開発）</h3>
-    <p>
-        情報システム部門に異動し、生産SCM領域を担当。<br>
-        生産工場の<strong>設備稼働状態の見える化システム</strong>を開発し、<br>
-        グループのリソースマネジメントも担っています。
-    </p>
-</section>
-
-<section>
-    <h2>DEI活動</h2>
-    <p>
-        2024年より、会社公認の有志団体「育児両立ERG」を立ち上げ、代表を務めています。<br>
-        現在の参加メンバーは約330名で、全6つのERGの中で最大規模。<br>
-        育児と仕事の両立を支えるための環境づくりや情報共有を推進し、<br>
-        社内のDEI向上に貢献しています。
-    </p>
-</section>
-
-<section>
-    <h2>仕事で大切にしていること</h2>
-    <ul>
-        <li>現場の声を丁寧に拾い、技術と人をつなぐこと</li>
-        <li>システム思考で全体最適を見据えること</li>
-        <li>「使いたくなる仕組み」をつくること</li>
-        <li>チームが健全に働ける環境づくり</li>
-    </ul>
-</section>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 必要に応じて経歴の動的表示などのJSを記述可能
+        });
+    </script>
 </body>
 </html>
