@@ -22,7 +22,7 @@
         header {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px 20px 20px;
+            padding: 30px 20px 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -30,7 +30,7 @@
         header h1 {
             color: #ffffff;
             margin: 0;
-            font-size: 2rem;
+            font-size: calc(1.5rem + 0.5vw);
             letter-spacing: 0.1em;
         }
         .back-link {
@@ -40,22 +40,34 @@
         }
         main {
             max-width: 800px;
-            margin: 20px auto 60px auto;
-            padding: 0 20px;
+            margin: 10px auto 60px auto;
+            padding: 0 15px;
+            box-sizing: border-box;
         }
         section {
             background-color: var(--card-bg);
-            padding: 40px;
-            margin-bottom: 30px;
+            padding: 35px;
+            margin-bottom: 25px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
         h2 {
             color: #ffffff;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-top: 0;
             border-bottom: 1px solid #333;
             padding-bottom: 10px;
+        }
+        .music-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
+        @media (max-width: 480px) {
+            section { padding: 20px; }
         }
     </style>
 </head>
@@ -67,23 +79,13 @@
     </header>
 
     <main>
+        <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=800" alt="Musical Instrument" class="music-img">
+
         <section>
             <h2>音を紡ぎ、場を整える</h2>
             <p>私にとって音楽は、単に聴いて楽しむだけの受動的なものではなく、空間や表現をクリエイトするための大切な要素です。</p>
             <p>背景としてピアノやトランペットの演奏経験があり、そこから「音全般」への深い興味へと広がっていきました。これまでに、10人強のアンサンブルの編曲を手掛けたり、居合の大会において全体の緊張感と高揚感をコントロールする音響担当を務めたりといった活動も行っています。</p>
-            <p>複数の音を美しく調和させる「編曲」や、武道の張り詰めた空気を演出する「音響」は、エンジニアとしてのシステム構築や、武道家としての空間把握の視点とも深く繋がっていると感じています。</p>
-        </section>
-
-        <section>
-            <h2>好きな音楽と役割</h2>
-            <p>ロック、アンビエント、エレクトロニカなど幅広く聴きます。作業中はインスト系、リラックスしたい時はアンビエントを流すことが多いです。その時の状態に合わせて最適な音を選択することで、心身のリズムを整えています。</p>
         </section>
     </main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // 音楽ページのJS処理
-        });
-    </script>
 </body>
 </html>
