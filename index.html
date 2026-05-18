@@ -80,19 +80,22 @@
             padding: 0 15px;
             box-sizing: border-box;
         }
-        
-        /* 💡 アニメーション用の初期状態設定（下から上にフェードイン） */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
-            will-change: opacity, transform;
+
+        /* 💡 【修正】CSSだけで動く安全なフェードインアニメーション */
+        @keyframes pageFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
-        /* 💡 JSでこのクラスが付与されたら動き出す */
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
+
+        /* ページ内の主要パーツに一斉に適応させます */
+        .animate-section {
+            animation: pageFadeIn 1.2s ease-out forwards;
         }
 
         section {
@@ -121,7 +124,7 @@
             border: 1px solid #333;
         }
         
-        /* 📇 名刺がわりのコンタクトセクション */
+        /* 📇 名刺用コンタクトセクション */
         .contact-links {
             display: flex;
             justify-content: center;
@@ -172,23 +175,23 @@
         <a href="sake.html">お酒</a>
     </nav>
 
-    <main>
-        <div class="fade-in-section">
+    <main class="animate-section">
+        <div>
             <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800" alt="Concept Image" class="concept-img">
         </div>
 
-        <section class="fade-in-section">
+        <section>
             <h2>About Me</h2>
             <p>製造業で設備開発・DX推進・現場改善に携わるエンジニアであり、同時にライフワークとして武道の道を歩んでいます。</p>
-            <p>論理的なシステム思考と、武道を通じて培った精神性を融合させ、現場のリアルとデジタルの可能性、工程とシステム、そして人と組織を心地よくつなぐことに情熱を注いでいます。</p>
+            <p>論理的なシステム思考と、武道を通じて培った精神性を融合させ、現場のリアルとデジタルの可能性、工程とシステム、そこで働く人と組織を心地よくつなぐことに情熱を注いでいます。</p>
         </section>
 
-        <section class="fade-in-section">
+        <section>
             <h2>My Core Values</h2>
             <p>プライベートでは、居合で心身を整え、音楽で場と表現を紡ぎ、お酒で大切な人との豊かな時間を楽しんでいます。それぞれの哲学やこだわりは、上のナビゲーションからご覧ください。</p>
         </section>
 
-        <section class="fade-in-section" style="border-left-color: #555;">
+        <section style="border-left-color: #555;">
             <h2>Contact</h2>
             <p style="text-align: center; margin-bottom: 15px;">お仕事のご相談や、コミュニティ・趣味に関する繋がりはこちらから。</p>
             <div class="contact-links">
@@ -201,30 +204,5 @@
     <footer>
         <p>&copy; 2026 Jin. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.fade-in-section');
-            
-            const options = {
-                root: null, // ビューポートを基準にする
-                rootMargin: '0px',
-                threshold: 0.1 // 10%が見えたら発火
-            };
-
-            const observer = new Intersection Observer((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // 一度表示されたら監視を解除して負荷軽減
-                    }
-                });
-            }, options);
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
 </body>
 </html>
