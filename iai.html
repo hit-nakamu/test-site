@@ -14,10 +14,11 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: 'Georgia', 'Times New Roman', 'Hiragino Mincho ProN', 'MS Mincho', serif;
+            font-family: 'Georgia', 'Times New Roman', 'Hiragino Mincho ProN', serif;
             line-height: 1.9;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
         header {
             max-width: 800px;
@@ -49,6 +50,13 @@
             padding: 0 15px;
             box-sizing: border-box;
         }
+        @keyframes pageFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-section {
+            animation: pageFadeIn 1.2s ease-out forwards;
+        }
         section {
             background-color: var(--card-bg);
             padding: 35px;
@@ -72,7 +80,7 @@
             padding: 20px;
             text-align: center;
             background-color: #111;
-            margin: 20px 0;
+            margin: 25px 0;
         }
         .quote-title {
             color: var(--accent-color);
@@ -87,23 +95,11 @@
             border-bottom: 1px solid #333;
             padding-bottom: 10px;
         }
-        p {
-            margin-bottom: 20px;
-        }
-        strong {
-            color: #ffffff;
-        }
-        ul {
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        @media (max-width: 480px) {
-            section { padding: 20px; }
-            header { padding: 25px 15px 10px 15px; }
-        }
+        p { margin-bottom: 20px; }
+        strong { color: #ffffff; }
+        ul { padding-left: 20px; margin-bottom: 20px; }
+        li { margin-bottom: 12px; }
+        @media (max-width: 480px) { section { padding: 20px; } header { padding: 25px 15px 10px 15px; } }
     </style>
 </head>
 <body>
@@ -113,32 +109,33 @@
         <a href="index.html" class="back-link">← トップへ</a>
     </header>
 
-    <main>
-        <img src="IMG_6145.jpeg" alt="無外流居合 鵬玉会での稽古" class="iai-img">
+    <main class="animate-section">
+        <img src="IMG_6145.jpeg" alt="愛用している居合刀の美しい佇まい" class="iai-img">
 
         <section>
-            <h2>はじめに</h2>
-            <p>コロナ明けに「無理のない範囲で体を動かしたい」という思いから自宅近くの道場を探し、出会ったのが<strong>国際居合道連盟 鵬玉会（ほうぎょくかい）</strong>でした。300年以上の歴史を誇る「無外流（むがいりゅう）」の、無駄な動きを省いた非常に実戦的な太刀筋に惹かれ、自然と刀の世界へと深く没頭していきました。現在は内弟子（uchideshi）としての自覚と責任を持ち、日々修行に励んでいます。</p>
+            <h2>無外流 鵬玉会との出会い</h2>
+            <p>コロナ禍が明け、「無理のない範囲で、一生をかけて心身を鍛えられるものを」と考え、出会ったのが<strong>国際居合道連盟 鵬玉会（ほうぎょくかい）</strong>でした。江戸時代から300年以上受け継がれてきた実戦居合「無外流（むがいりゅう）」の、一切の無駄を削ぎ落とした研ぎ澄まされた美しさに強い衝撃を受け、自然と日本刀の世界へと没頭していきました。</p>
+            <p>毎日の自宅での自主稽古と、週に複数回の道場通いを重ねる中でその姿勢を評価いただき、現在は<strong>内弟子（uchideshi）</strong>として、単なる習い事の枠を超え、武道の精神を日常の生き方そのものに昇華させる修行を続けています。</p>
         </section>
 
         <section>
-            <h2>鵬玉会での教え：心は常に「静」、そして丸くあれ</h2>
+            <h2>日常に活きる武道精神：心は常に「静」、そして丸くあれ</h2>
             <div class="quote-box">
-                <div class="quote-title">「心は常に『静』、そして丸くあれ」</div>
+                <div class="quote-title">「心は常に『静』、形成（所作）は〇くあれ」</div>
             </div>
-            <p>鵬玉会の心得にあるこの言葉は、道場の中だけでなく、私の日常や育児において最も大切な心の指針となっています。</p>
-            <p>日常の中で心がざわついたり、自分に余裕を失いそうになったりする瞬間こそ、深く呼吸を整えてこの言葉を思い出し、心を「静」に、そして丸く保つよう意識しています。これにより自分の中に確かな「許容の空白」が生まれ、子どもたちともブレない軸を持って、ありのまま信頼し合える関係を築くことができています。</p>
+            <p>鵬玉会で重んじられるこの教えは、私の人生、特に家庭で幼い子どもたちと向き合う瞬間に大きな変化をもたらしました。</p>
+            <p>仕事で疲れているときや、日常の中でつい心がざわつき、強い言葉を使ってしまいそうになる瞬間があります。その一瞬にスッと深く呼吸を整え、刀を抜くときのように心を「静」に、そして相手を包み込むように「丸く」保つ。武道を通じて培ったこのブレない軸が、自分の中に確かな「許容の空白（余裕）」を生み出します。感情をぶつけるのではなく、余裕を持って子どもたちと接することで、互いに100%信頼し合える強い絆が育まれていると実感しています。</p>
         </section>
 
         <section>
             <h2>武道としての追求：3拍子揃った「斬れる居合」</h2>
-            <p>鵬玉会の無外流居合は、単なる伝統文化の模倣や踊りではなく、本来の武道としての「強さ」を根幹に置いています。そのため、以下の3つの要素を体系的に網羅し、気剣体一致の無意識の境地を目指すことを大切にしています。</p>
+            <p>鵬玉会が追求する居合の本質は、踊りのような美しさではなく、実戦に裏付けられた「強さ」です。形・組太刀・試し斬りの3つを三位一体で網羅することを目指しています。</p>
             <ul>
-                <li><strong>形（かた）：</strong>仮想敵を想定し、刃筋やフォームを寸分違わぬ動きで反復し、気品ある美しい形を研ぎ澄ます。</li>
-                <li><strong>組太刀（くみたち）：</strong>敵との間合いを測り合い、呼吸を合わせ、約束組太刀から自由組太刀まで実践的な身体のさばきを学ぶ。</li>
-                <li><strong>試し斬り：</strong>「居合の本義は抜刀の一瞬にあり」という言葉の通り、ごまかしの利かない抜刀のその一拍子の初太刀で斬る、<strong>「抜き即斬」</strong>の技術を研究する。</li>
+                <li><strong>形（かた）：</strong>仮想の敵を眼前に描き、ミリ単位の刃筋、足捌きを徹底的に身体に染み込ませます。例えば基本の一撃である「横一（よこいち）」の水平な鋭い一閃など、誰が見ても寸分の隙もない美しい所作を研ぎ澄まします。</li>
+                <li><strong>組太刀（くみたち）：</strong>木刀を合わせ、実在する相手とリアルな間合いを測り合います。呼吸を読み、一瞬の隙を突くことで、静止画ではなく「動く敵」に対する実践的な身体の使い方を習得します。</li>
+                <li><strong>試し斬り（抜刀）：</strong>「居合の本義は抜刀の一瞬にあり」。鵬玉会では実際に真剣を握り、畳表を斬ることで、自分の刃筋が本当に正しかったのか、ごまかしの利かない結末と向き合います。まさに<strong>「抜き即斬」</strong>の理合いの研究です。</li>
             </ul>
-            <p>鵬玉会の百足伝（ひゃくそくでん）にある「稽古には清水の末の細々と絶えず流るる心こそよき」の教えを胸に刻み、日々の持続的な歩みを大切にしながら、唯一無二の自分自身と向き合う非日常の時間を愉しんでいます。</p>
+            <p>鵬玉会の百足伝（ひゃくそくでん）にある、<em>「稽古には清水の末の細々と絶えず流るる心こそよき」</em>という言葉を大切にしています。一気に派手に動くのではなく、清水の湧き水が絶え間なく細く長く流れるように、毎日一歩ずつ、一生をかけて自分を磨き続ける非日常の空間が、ここにあります。</p>
         </section>
     </main>
 </body>
