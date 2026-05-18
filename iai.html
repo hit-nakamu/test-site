@@ -3,126 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>居合 - 仁</title>
+    <title>仁 - Self Introduction</title>
     <style>
         :root {
-            --bg-color: #0d0d0d; /* より深い黒 */
+            --bg-color: #121212;
             --text-color: #e0e0e0;
             --accent-color: #c9a063;
-            --card-bg: #161616;
+            --card-bg: #1e1e1e;
         }
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: 'Georgia', 'Times New Roman', 'Hiragino Mincho ProN', 'MS Mincho', serif; /* 伝統を感じる明朝体ベース */
-            line-height: 1.9;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
             margin: 0;
             padding: 0;
         }
         header {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px 20px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            border-bottom: 1px solid #2a2a2a;
         }
         header h1 {
+            font-size: calc(2rem + 1.5vw); /* 画面幅に合わせて可変 */
+            margin: 0 0 15px 0;
+            letter-spacing: 0.2em;
             color: #ffffff;
-            margin: 0;
-            font-size: 2rem;
-            letter-spacing: 0.3em;
+            white-space: nowrap; /* 意図しない改行を防ぐ */
         }
-        .back-link {
+        .tagline {
+            font-size: calc(0.9rem + 0.5vw);
             color: var(--accent-color);
-            text-decoration: none;
+            margin-bottom: 8px;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+        }
+        .sub-tagline {
             font-size: 0.9rem;
-            font-family: sans-serif;
+            color: #888;
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* スマホで折り返せるように */
+            background-color: #1a1a1a;
+            padding: 15px 10px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 5px 15px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        nav a:hover {
+            color: var(--accent-color);
         }
         main {
             max-width: 800px;
-            margin: 20px auto 60px auto;
-            padding: 0 20px;
+            margin: 20px auto;
+            padding: 0 15px;
+            box-sizing: border-box;
         }
         section {
             background-color: var(--card-bg);
-            padding: 40px;
-            margin-bottom: 30px;
-            border-radius: 4px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            border: 1px solid #222;
-        }
-        .quote-box {
-            border-top: 1px solid var(--accent-color);
-            border-bottom: 1px solid var(--accent-color);
-            padding: 30px 20px;
-            text-align: center;
-            background-color: #111;
-            margin: 20px 0;
-        }
-        .quote-title {
-            color: var(--accent-color);
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            letter-spacing: 0.2em;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
         h2 {
             color: #ffffff;
             font-size: 1.4rem;
             margin-top: 0;
-            letter-spacing: 0.1em;
+            margin-bottom: 20px;
             border-bottom: 1px solid #333;
             padding-bottom: 10px;
         }
-        p {
+        .concept-img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 6px;
             margin-bottom: 20px;
+            border: 1px solid #333;
         }
-        strong {
-            color: #ffffff;
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #555;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 480px) {
+            header { padding: 40px 15px; }
+            section { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Iaido / 居合</h1>
-        <a href="index.html" class="back-link">← トップへ戻る</a>
+        <h1>仁</h1>
+        <p class="tagline">「静の中に動を、システムの中に心を。」</p>
+        <p class="sub-tagline">エンジニア × 居合 × 音楽 × お酒</p>
     </header>
 
+    <nav id="global-nav">
+        <a href="work.html">仕事</a>
+        <a href="iai.html">居合</a>
+        <a href="music.html">音楽</a>
+        <a href="sake.html">お酒</a>
+    </nav>
+
     <main>
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800" alt="Concept Image" class="concept-img">
+
         <section>
-            <h2>はじめに</h2>
-            <p>居合を始めたのは、コロナ明けに「無理のない範囲で体を動かしたい」と思ったことがきっかけでした。自宅の近くで続けられるものを探していたときに<strong>無外流 鵬玉会</strong>を知り、もともと「道」のつくものに興味があったこともあり、自然と刀の世界へと惹かれていきました。</p>
-            <p>稽古を重ねる中で、居合は単なる運動ではなく、<strong>独自の哲学を持って自分の生き方を整える時間</strong>へと変わっていきました。現在は内弟子として、より高い意識を持って日々修行に励んでいます。</p>
+            <h2>About Me</h2>
+            <p>製造業で設備開発・DX推進・現場改善に携わるエンジニアであり、同時にライフワークとして武道の道を歩んでいます。</p>
+            <p>論理的なシステム思考と、武道を通じて培った精神性を融合させ、現場のリアルとデジタルの可能性、工程とシステム、そして人と組織を心地よくつなぐことに情熱を注いでいます。</p>
         </section>
 
         <section>
-            <h2>心の在り方</h2>
-            <div class="quote-box">
-                <div class="quote-title">「心は常に静、そして〇くあれ」</div>
-            </div>
-            <p>鵬玉会の心得にあるこの教えは、私の人生において最も大切な指針となっています。</p>
-            <p>この精神は、道場の中だけではなく日常の、特に子どもたちと向き合う瞬間に強く活きています。自分自身に余裕がないとき、つい強い言葉を使ってしまいそうになる瞬間こそ、深く呼吸を整え、心を静かに、操作を〇（まる）く保つよう心掛けています。</p>
-            <p>その結果、自分の中に確かな「許容の空白」が生まれ、子どもたちも私のありのままを理解し、お互いに信頼し合える関係を築けています。武道の教えは、私にブレない軸と、周囲を包み込む余裕を与えてくれました。</p>
-        </section>
-
-        <section>
-            <h2>稽古で大切にしていること</h2>
-            <p>稽古では、<strong>呼吸・間合い・体の隅々まで意識を行き渡らせること</strong>を大切にしています。どの瞬間も「誰に見られても美しい所作」であることを目指し、動きの一つひとに理合いを求めています。</p>
-            <p>形であっても、そこに明確に相手がいるつもりで斬れているか、技として成立しているか。その緊張感を保つために、道場に向かう前からすでに稽古が始まっているという心構えで臨んでいます。内弟子としての自覚を持つことで、所作や生き方そのものが自然と整っていきます。</p>
-        </section>
-
-        <section>
-            <h2>居合の魅力</h2>
-            <p>居合の魅力を一言で表すなら、<strong>「生き方を考え、自分という唯一無二の存在と向き合う時間」</strong>です。刀を抜き、納めるという一連の静寂な動きの中に、自分の弱さや迷いが鏡のように映し出されます。だからこそ稽古は常に自分自身との対話であり、心と体を凛と研ぎ澄ます時間になります。</p>
+            <h2>My Core Values</h2>
+            <p>プライベートでは、居合で心身を整え、音楽で場と表現を紡ぎ、お酒で大切な人との豊かな時間を楽しんでいます。それぞれの哲学やこだわりは、上のナビゲーションからご覧ください。</p>
         </section>
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // 居合ページの特別なJS処理があればここに記述
-        });
-    </script>
+    <footer>
+        <p>&copy; 2026 Jin. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
