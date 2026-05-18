@@ -1,30 +1,116 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>お酒 - 仁</title>
-<style>
-    body { font-family: sans-serif; margin: 0; background: #f5f5f5; color: #333; }
-    header { background: #222; color: #fff; padding: 40px 20px; text-align: center; }
-    section { padding: 40px 20px; max-width: 800px; margin: auto; background: #fff; margin-top: 20px; border-radius: 8px; }
-    h2 { border-left: 6px solid #444; padding-left: 10px; }
-    a { color: #0066cc; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お酒 - 仁</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --accent-color: #c9a063;
+            --card-bg: #1e1e1e;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px 20px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+        }
+        .back-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto 60px auto;
+            padding: 0 20px;
+        }
+        section {
+            background-color: var(--card-bg);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        h2 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin-top: 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        .sake-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            padding: 0;
+            list-style: none;
+            margin-top: 20px;
+        }
+        .sake-item {
+            background-color: #252525;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid #333;
+            font-weight: bold;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <h1>お酒</h1>
-    <p><a href="index.html" style="color:#fff;">← トップへ戻る</a></p>
-</header>
+    <header>
+        <h1>Sake / お酒</h1>
+        <a href="index.html" class="back-link">← トップへ戻る</a>
+    </header>
 
-<section>
-    <h2>好きなお酒</h2>
-    <p>
-        日本酒とウイスキーが特に好きです。<br>
-        その日の気分や食事に合わせて選ぶ時間も含めて楽しんでいます。
-    </p>
-</section>
+    <main>
+        <section>
+            <h2>日本酒への探究と、共有のひととき</h2>
+            <p>日本酒とウイスキーを特に好みますが、それは単なる嗜好品としてだけでなく、銘柄の背景にあるストーリーや、その日いただく食事とのペアリングを「探究」することを含めて楽しんでいます。</p>
+            <p>日本酒は妻とも共通の趣味になっており、私の誕生日に（行き先を告げられないまま新幹線に乗せられるという嬉しいサプライズで！）越後湯沢へ一緒に酒探しの旅に出かけたのは、とても素晴らしい思い出です。</p>
+        </section>
 
-<section>
-    <h
+        <section>
+            <h2>お気に入りの銘柄</h2>
+            <p>これまでに数多くの日本酒を味わってきましたが、特に以下の銘柄のように、作り手のこだわりと個性が光るお酒を好んで嗜んでいます。</p>
+            
+            <ul class="sake-list">
+                <li class="sake-item">田酒</li>
+                <li class="sake-item">鳳凰美田</li>
+                <li class="sake-item">花邑</li>
+                <li class="sake-item">まんさくの花</li>
+                <li class="sake-item">十四代</li>
+                <li class="sake-item">獺祭</li>
+            </ul>
+            
+            <p style="margin-top: 30px;">実は、まだ「この一本で人生が変わった！」という決定的な銘柄には巡り合っていません。しかし、妻と共に語らいながら、まだ見ぬ最高の「運命の一本」を追い求めるそのプロセス自体が、私にとって何より豊かな時間となっています。</p>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // お酒ページのJS処理
+        });
+    </script>
+</body>
+</html>
