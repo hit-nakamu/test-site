@@ -22,7 +22,7 @@
         header {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px 20px 20px;
+            padding: 30px 20px 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -30,7 +30,7 @@
         header h1 {
             color: #ffffff;
             margin: 0;
-            font-size: 2rem;
+            font-size: calc(1.5rem + 0.5vw);
             letter-spacing: 0.1em;
         }
         .back-link {
@@ -40,39 +40,53 @@
         }
         main {
             max-width: 800px;
-            margin: 20px auto 60px auto;
-            padding: 0 20px;
+            margin: 10px auto 60px auto;
+            padding: 0 15px;
+            box-sizing: border-box;
         }
         section {
             background-color: var(--card-bg);
-            padding: 40px;
-            margin-bottom: 30px;
+            padding: 35px;
+            margin-bottom: 25px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
         h2 {
             color: #ffffff;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-top: 0;
             border-bottom: 1px solid #333;
             padding-bottom: 10px;
         }
+        .sake-banner {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
         .sake-list {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
             padding: 0;
             list-style: none;
             margin-top: 20px;
         }
         .sake-item {
             background-color: #252525;
-            padding: 15px;
+            padding: 12px;
             border-radius: 4px;
             text-align: center;
             border: 1px solid #333;
             font-weight: bold;
             color: #ffffff;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 480px) {
+            section { padding: 20px; }
+            .sake-list { grid-template-columns: repeat(2, 1fr); } /* スマホで綺麗に2列に並ぶ */
         }
     </style>
 </head>
@@ -84,16 +98,16 @@
     </header>
 
     <main>
+        <img src="https://images.unsplash.com/photo-1609951651556-5334e2706168?q=80&w=800" alt="Japanese Sake" class="sake-banner">
+
         <section>
             <h2>日本酒への探究と、共有のひととき</h2>
             <p>日本酒とウイスキーを特に好みますが、それは単なる嗜好品としてだけでなく、銘柄の背景にあるストーリーや、その日いただく食事とのペアリングを「探究」することを含めて楽しんでいます。</p>
-            <p>日本酒は妻とも共通の趣味になっており、私の誕生日に（行き先を告げられないまま新幹線に乗せられるという嬉しいサプライズで！）越後湯沢へ一緒に酒探しの旅に出かけたのは、とても素晴らしい思い出です。</p>
+            <p>日本酒は妻とも共通の趣味になっており、私の誕生日に越後湯沢へ一緒に酒探しの旅に出かけたのは、とても素晴らしい思い出です。</p>
         </section>
 
         <section>
             <h2>お気に入りの銘柄</h2>
-            <p>これまでに数多くの日本酒を味わってきましたが、特に以下の銘柄のように、作り手のこだわりと個性が光るお酒を好んで嗜んでいます。</p>
-            
             <ul class="sake-list">
                 <li class="sake-item">田酒</li>
                 <li class="sake-item">鳳凰美田</li>
@@ -102,15 +116,7 @@
                 <li class="sake-item">十四代</li>
                 <li class="sake-item">獺祭</li>
             </ul>
-            
-            <p style="margin-top: 30px;">実は、まだ「この一本で人生が変わった！」という決定的な銘柄には巡り合っていません。しかし、妻と共に語らいながら、まだ見ぬ最高の「運命の一本」を追い求めるそのプロセス自体が、私にとって何より豊かな時間となっています。</p>
         </section>
     </main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // お酒ページのJS処理
-        });
-    </script>
 </body>
 </html>
