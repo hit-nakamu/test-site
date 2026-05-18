@@ -22,31 +22,34 @@
         header {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px 20px 20px;
+            padding: 30px 20px 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         header h1 {
             color: #ffffff;
             margin: 0;
-            font-size: 2rem;
+            font-size: calc(1.6rem + 0.5vw);
             letter-spacing: 0.1em;
         }
         .back-link {
             color: var(--accent-color);
             text-decoration: none;
             font-size: 0.9rem;
+            padding: 5px 0;
         }
         main {
             max-width: 800px;
-            margin: 20px auto 60px auto;
-            padding: 0 20px;
+            margin: 10px auto 60px auto;
+            padding: 0 15px;
+            box-sizing: border-box;
         }
         section {
             background-color: var(--card-bg);
-            padding: 40px;
-            margin-bottom: 30px;
+            padding: 35px;
+            margin-bottom: 25px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
@@ -56,15 +59,23 @@
         }
         h2 {
             color: #ffffff;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-top: 0;
             border-bottom: 1px solid #333;
             padding-bottom: 10px;
         }
+        .work-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
         .timeline-item {
             border-left: 2px solid var(--accent-color);
             padding-left: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             position: relative;
         }
         .timeline-item::before {
@@ -84,14 +95,13 @@
         }
         .job-title {
             color: #ffffff;
-            margin: 5px 0 10px 0;
-            font-size: 1.1rem;
+            margin: 3px 0 8px 0;
+            font-size: 1.05rem;
         }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 10px;
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        @media (max-width: 480px) {
+            section { padding: 20px; }
         }
     </style>
 </head>
@@ -103,16 +113,18 @@
     </header>
 
     <main>
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800" alt="Engineering Image" class="work-img">
+
         <section>
             <h2>プロフィール</h2>
-            <p>2011年に<strong>日産自動車株式会社</strong>へ入社して以来、パワートレイン領域を中心に、生産技術・設備開発・DX推進・SCMシステム開発と幅広い領域でキャリアを積んしてきました。</p>
-            <p>一貫して<strong>「現場のリアル」と「デジタルの力」をつなぐ仕事</strong>に取り組み、技術と人が共に成長できる環境づくりを目指しています。</p>
+            <p>2011年に日産自動車株式会社へ入社して以来、パワートレイン領域を中心に、生産技術・設備開発・DX推進・SCMシステム開発と幅広い領域でキャリアを積んしてきました。</p>
+            <p>一貫して「現場のリアル」と「デジタルの力」をつなぐ仕事に取り組み、技術と人が共に成長できる環境づくりを目指しています。</p>
         </section>
 
         <section class="erg-section">
             <h2>System Thinking in Community（DEI活動）</h2>
             <p>2024年より、会社公認の有志団体「育児両立ERG」を立ち上げ、代表を務めています。現在は約330名が所属する社内最大規模のERGへと成長しました。</p>
-            <p>このコミュニティの立ち上げ・運営においては、エンジニアとして培った<strong>システム思考と戦略的アプローチ</strong>をフルに転用しました。発足時に掲げたビジョンと、その指針となる「3本柱」を論理的に構造化したことで、持続可能で熱量のある組織設計を実践しています。</p>
+            <p>このコミュニティの立ち上げ・運営においては、エンジニアとして培ったシステム思考と戦略的アプローチをフルに転用しました。発足時に掲げたビジョンと、その指針となる「3本柱」を論理的に構造化したことで、持続可能で熱量のある組織設計を実践しています。</p>
         </section>
 
         <section>
@@ -121,31 +133,31 @@
             <div class="timeline-item">
                 <span class="time">2011年〜</span>
                 <h3 class="job-title">エンジン生産技術（いわき工場）</h3>
-                <p>V6エンジン組立ラインの生産技術員として、現行ラインの維持・改善、新規ライン立ち上げを担当。品質・コスト・納期の最適化に取り組みました。</p>
+                <p>V6エンジン組立ラインの生産技術員として、現行ラインの維持・改善、新規ライン立ち上げを担当。</p>
             </div>
 
             <div class="timeline-item">
                 <span class="time">2015年〜</span>
                 <h3 class="job-title">設備システム・PDM導入・シミュレーション推進</h3>
-                <p>設備システムグループ、のちにパワートレイン技術企画部にて、PDM導入企画・実行を担当。設備・ラインの3Dシミュレーション適用を拡大し、生産技術領域のデジタル化を推進しました。</p>
+                <p>設備・ラインの3Dシミュレーション適用を拡大し、生産技術領域のデジタル化を推進しました。</p>
             </div>
 
             <div class="timeline-item">
                 <span class="time">2020年〜</span>
                 <h3 class="job-title">ASSB生産設備開発（グループ総括）</h3>
-                <p>全固体電池（ASSB）生産設備の開発を担当し、グループを総括。製品開発と設備開発を並行して進める難易度の高い領域で、セル工程以降の設備開発をリードしました。</p>
+                <p>全固体電池（ASSB）生産設備の開発を担当し、セル工程以降の設備開発をリードしました。</p>
             </div>
 
             <div class="timeline-item">
                 <span class="time">2023年〜</span>
                 <h3 class="job-title">DX推進（デジタル戦略の策定と実行）</h3>
-                <p>部門のDX推進部署にて、デジタル戦略の立案、実現に向けた方策の計画・実行を担当。現場の課題を丁寧に拾いながら、実効性の高いデジタル技術導入を推進しました。</p>
+                <p>現場の課題を丁寧に拾いながら、実効性の高いデジタル技術導入を推進しました。</p>
             </div>
 
             <div class="timeline-item">
                 <span class="time">2025年〜</span>
                 <h3 class="job-title">生産SCM領域（設備稼働監視システム開発）</h3>
-                <p>情報システム部門にて、生産工場の設備稼働状態の見える化システムを開発。グループのリソースマネジメントも担っています。</p>
+                <p>情報システム部門にて、生産工場の設備稼働状態の見える化システムを開発しています。</p>
             </div>
         </section>
 
@@ -157,22 +169,6 @@
                 <li>高等学校教諭免許状（情報）</li>
             </ul>
         </section>
-
-        <section>
-            <h2>仕事で大切にしていること</h2>
-            <ul>
-                <li>現場の声を丁寧に拾い、技術と人をつなぐこと</li>
-                <li>システム思考で全体最適を見据え、組織や関係性を構築すること</li>
-                <li>「使いたくなる仕組み・持続するコミュニティ」をつくること</li>
-                <li>チームが健全に、心に余裕を持って働ける環境づくり</li>
-            </ul>
-        </section>
     </main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // 必要に応じて経歴の動的表示などのJSを記述可能
-        });
-    </script>
 </body>
 </html>
