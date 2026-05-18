@@ -4,19 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>仁 - Self Introduction</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --accent-color: #c9a063; /* 上品なゴールド（武道・伝統のイメージ） */
+            --card-bg: #1e1e1e;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            border-bottom: 1px solid #2a2a2a;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 0.2em;
+            color: #ffffff;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+        }
+        .sub-tagline {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        section {
+            background-color: var(--card-bg);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        h2 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #555;
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <h1>仁（Jin）</h1>
-        <p><strong>「静の中に動を、システムの中に心を。」</strong></p>
-        <p>エンジニア × 居合 × 音楽 × お酒</p>
+        <h1>仁</h1>
+        <p class="tagline">「静の中に動を、システムの中に心を。」</p>
+        <p class="sub-tagline">エンジニア × 居合 × 音楽 × お酒</p>
     </header>
 
-    <nav>
-        <a href="work.html">仕事</a> | 
-        <a href="iai.html">居合</a> | 
-        <a href="music.html">音楽</a> | 
+    <nav id="global-nav">
+        <a href="work.html">仕事</a>
+        <a href="iai.html">居合</a>
+        <a href="music.html">音楽</a>
         <a href="sake.html">お酒</a>
     </nav>
 
@@ -29,9 +116,19 @@
 
         <section>
             <h2>My Core Values</h2>
-            <p>プライベートでは、居合で心身を整え、音楽で場と表現を紡ぎ、お酒で大切な人との豊かな時間を楽しんでいます。それぞれの哲学やこだわりは、上のリンクからご覧ください。</p>
+            <p>プライベートでは、居合で心身を整え、音楽で場と表現を紡ぎ、お酒で大切な人との豊かな時間を楽しんでいます。それぞれの哲学やこだわりは、上のナビゲーションからご覧ください。</p>
         </section>
     </main>
 
+    <footer>
+        <p>&copy; 2026 Jin. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // 将来的な拡張用のJSをここに残しています
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Site initialized.');
+        });
+    </script>
 </body>
 </html>
