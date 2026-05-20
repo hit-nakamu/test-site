@@ -63,24 +63,37 @@
         .card {
             background-color: var(--card-bg);
             border: 1px solid #222;
-            border-radius: 4px;
-            padding: 25px;
+            border-radius: 6px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             transition: transform 0.3s ease, border-color 0.3s ease;
             text-decoration: none;
             color: var(--text-color);
             display: flex;
             flex-direction: column;
+            overflow: hidden; /* 画像の角丸をカードに合わせる */
         }
         .card:hover {
             transform: translateY(-5px);
             border-color: var(--accent-color);
         }
+        /* カード内の画像スタイリング */
+        .card-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-bottom: 1px solid #222;
+        }
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
         .card h3 {
             color: #ffffff;
             margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.25rem;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -96,9 +109,10 @@
         }
         .card p {
             margin: 0;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #b0b0b0;
             flex-grow: 1;
+            line-height: 1.6;
         }
         footer {
             text-align: center;
@@ -134,23 +148,35 @@
 
             <div class="grid">
                 <a href="work.html" class="card">
-                    <h3>仕事 / Work</h3>
-                    <p>自動車製造の未来を切り拓け。最新の技術を駆使した設備・生産ラインの3Dシミュレーションなど、製造技術エンジニアとしての情熱と、仕事におけるロジカルな挑戦の記録。</p>
+                    <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=600" alt="Work" class="card-img">
+                    <div class="card-content">
+                        <h3>仕事 / Work</h3>
+                        <p>自動車製造の未来を切り拓け。最新の技術を駆使した設備・生産ラインの3Dシミュレーションなど、製造技術エンジニアとしての情熱と、仕事におけるロジカルな挑戦の記録。</p>
+                    </div>
                 </a>
 
                 <a href="iai.html" class="card">
-                    <h3>居合 / Iaido</h3>
-                    <p>無外流 鵬玉会の内弟子として日々白刃を研ぎ澄ます。仮想の敵を眼前に描き、ミリ単位の刃筋を追求する。日常の家庭や心にも活きる「静」と「丸」の武道精神。</p>
+                    <img src="https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?q=80&w=600" alt="Iaido" class="card-img">
+                    <div class="card-content">
+                        <h3>居合 / Iaido</h3>
+                        <p>無外流 鵬玉会の内弟子として日々白刃を研ぎ澄ます。仮想の敵を眼前に描き、ミリ単位の刃筋を追求する。日常の家庭や心にも活きる「静」と「丸」の武道精神。</p>
+                    </div>
                 </a>
 
                 <a href="music.html" class="card">
-                    <h3>音楽 / Music</h3>
-                    <p>ハンスホイヤーとヤマハのフレンチホルンが奏でる、オーケストラやクラシック音楽の奥深い魅力。かつて熱中したトランペットからホルンへの転向と、音色への探究心。</p>
+                    <img src="https://images.unsplash.com/photo-1573871666457-7c7329415201?q=80&w=600" alt="Music" class="card-img">
+                    <div class="card-content">
+                        <h3>音楽 / Music</h3>
+                        <p>ハンスホイヤーとヤマハのフレンチホルンが奏でる、オーケストラやクラシック音楽の奥深い魅力。かつて熱中したトランペットからホルンへの転向と、音色への探究心。</p>
+                    </div>
                 </a>
 
                 <a href="sake.html" class="card">
-                    <h3>お酒 / Sake</h3>
-                    <p>日本酒とスコッチウイスキー。蔵人のこだわりや料理との「至高のペアリング」を深く味わう。妻が誕生日サプライズで企画してくれた、忘れられない越後湯沢の酒探しの旅。</p>
+                    <img src="IMG_7568.png" alt="Sake" class="card-img">
+                    <div class="card-content">
+                        <h3>お酒 / Sake</h3>
+                        <p>日本酒とスコッチウイスキー。蔵人のこだわりや料理との「至高のペアリング」を深く味わう。妻が誕生日サプライズで企画してくれた、忘れられない越後湯沢の酒探しの旅。</p>
+                    </div>
                 </a>
             </div>
         </main>
