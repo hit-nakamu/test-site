@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>仁 - Self Introduction</title>
+    
+    <meta property="og:title" content="仁 - Self Introduction">
+    <meta property="og:description" content="エンジニア × 居合 × 音楽 × お酒。システムの中に心を紡ぐポートフォリオ。">
+    <meta property="og:url" content="https://hit-nakamu.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800"> <meta name="twitter:card" content="summary_large_image">
+
     <style>
         :root {
             --bg-color: #121212;
@@ -81,19 +88,10 @@
             box-sizing: border-box;
         }
 
-        /* 💡 【修正】CSSだけで動く安全なフェードインアニメーション */
         @keyframes pageFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        /* ページ内の主要パーツに一斉に適応させます */
         .animate-section {
             animation: pageFadeIn 1.2s ease-out forwards;
         }
@@ -124,7 +122,30 @@
             border: 1px solid #333;
         }
         
-        /* 📇 名刺用コンタクトセクション */
+        /* 💡 【追加】トピックス用のスタイル */
+        .topics-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .topics-item {
+            display: flex;
+            border-bottom: 1px solid #2a2a2a;
+            padding: 12px 0;
+            font-size: 0.95rem;
+        }
+        .topics-item:last-child {
+            border-bottom: none;
+        }
+        .topics-date {
+            min-width: 90px;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        .topics-text {
+            color: #ccc;
+        }
+
         .contact-links {
             display: flex;
             justify-content: center;
@@ -156,6 +177,7 @@
         @media (max-width: 480px) {
             header { padding: 40px 15px; }
             section { padding: 20px; }
+            .topics-item { flex-direction: column; gap: 4px; }
         }
     </style>
 </head>
@@ -179,6 +201,24 @@
         <div>
             <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800" alt="Concept Image" class="concept-img">
         </div>
+
+        <section>
+            <h2>Recent Topics</h2>
+            <ul class="topics-list">
+                <li class="topics-item">
+                    <span class="topics-date">2026.05</span>
+                    <span class="topics-text">所属する居合道組織「鵬玉会」のWeb思想に合わせ、居合ページを大幅アップデートしました。</span>
+                </li>
+                <li class="topics-item">
+                    <span class="topics-date">2026.04</span>
+                    <span class="topics-text">代表を務める社内最大規模の「育児両立ERG」の参加メンバーが330名を突破。活動を加速させています。</span>
+                </li>
+                <li class="topics-item">
+                    <span class="topics-date">2026.03</span>
+                    <span class="topics-text">自身のこれまでの歩みと趣味の哲学を詰め込んだ、名刺代わりのポートフォリオサイトを公開。</span>
+                </li>
+            </ul>
+        </section>
 
         <section>
             <h2>About Me</h2>
