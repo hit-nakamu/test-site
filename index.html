@@ -3,162 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>仁 - ポートフォリオ</title>
+    <title>Hitoshi's Portfolio</title>
     <style>
         :root {
-            --bg-color: #0d0d0d;
+            --bg-color: #121212;
             --text-color: #e0e0e0;
-            --accent-color: #c9a063;
-            --card-bg: #161616;
+            --accent-color: #c9a063; /* 落ち着いたゴールド */
+            --card-bg: #1e1e1e;
         }
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
-            line-height: 1.8;
             margin: 0;
             padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
         header {
             text-align: center;
-            margin-bottom: 60px;
+            padding: 60px 20px 20px 20px;
         }
         header h1 {
             color: #ffffff;
-            font-size: 2.5rem;
-            letter-spacing: 0.1em;
-            margin-bottom: 10px;
+            font-size: calc(2rem + 1vw);
+            margin: 0 0 10px 0;
+            letter-spacing: 0.2em;
         }
         header p {
             color: var(--accent-color);
-            font-size: 1.1rem;
-            letter-spacing: 0.15em;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 0.1em;
         }
-        .profile-intro {
-            background-color: var(--card-bg);
-            padding: 35px;
-            border-radius: 4px;
-            margin-bottom: 50px;
+        main {
+            max-width: 900px;
+            width: 100%;
+            padding: 0 20px 80px 20px;
+            box-sizing: border-box;
+        }
+        
+        /* 自己紹介・コアバリューの共通スタイル */
+        .content-section {
+            max-width: 760px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #bbbbbb;
+            font-size: 0.95rem;
+            background-color: #181818;
+            padding: 25px 30px;
+            border-radius: 6px;
             border: 1px solid #222;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
-        .profile-intro h2 {
+        .content-section h2 {
             color: #ffffff;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            letter-spacing: 0.05em;
             border-bottom: 1px solid #333;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
+            display: inline-block;
         }
-        .grid {
+        .content-section p {
+            margin: 0 0 15px 0;
+        }
+        .content-section p:last-child {
+            margin-bottom: 0;
+        }
+        .content-section strong {
+            color: #ffffff;
+        }
+
+        /* 4カラム/2カラム切り替えのグリッド */
+        .grid-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
         }
         .card {
             background-color: var(--card-bg);
-            border: 1px solid #222;
-            border-radius: 4px;
-            padding: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
             color: var(--text-color);
             display: flex;
             flex-direction: column;
+            border: 1px solid #2a2a2a;
         }
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(201, 160, 99, 0.2);
             border-color: var(--accent-color);
         }
-        .card h3 {
+        .card-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            filter: grayscale(30%);
+            transition: filter 0.3s ease;
+        }
+        .card:hover .card-img {
+            filter: grayscale(0%);
+        }
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-content h2 {
             color: #ffffff;
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
+            margin: 0 0 10px 0;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 8px;
+            border-bottom: none;
+            padding-bottom: 0;
         }
-        .card h3::after {
-            content: '→';
-            color: var(--accent-color);
-            font-size: 1rem;
-            transition: transform 0.3s ease;
-        }
-        .card:hover h3::after {
-            transform: translateX(5px);
-        }
-        .card p {
-            margin: 0;
-            font-size: 0.95rem;
-            color: #b0b0b0;
-            flex-grow: 1;
-        }
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            color: #666;
+        .card-content p {
             font-size: 0.85rem;
-            border-top: 1px solid #222;
-            padding-top: 20px;
+            line-height: 1.6;
+            margin: 0;
+            color: #aaaaaa;
         }
-        @media (max-width: 600px) {
-            .grid {
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .grid-container {
                 grid-template-columns: 1fr;
             }
-            .container {
-                padding: 40px 15px;
-            }
+            header { padding: 40px 20px 25px 20px; }
+            .content-section { padding: 20px; font-size: 0.9rem; }
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            color: #666;
+            font-size: 0.8rem;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            border-top: 1px solid #1a1a1a;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>仁 / Jin</h1>
-            <p>PORTFOLIO</p>
-        </header>
+    <header>
+        <h1>仁 / Hitoshi</h1>
+        <p>My Pieces of Life</p>
+    </header>
 
-        <main>
-            <section class="profile-intro">
-                <h2>はじめに</h2>
-                <p>このウェブサイトは、私の仕事における挑戦や、人生を豊かにしてくれる大切な趣味（居合・音楽・お酒）について綴ったプライベート・ポートフォリオです。ロジカルに突き詰めるエンジニアリングの側面と、一生をかけて心身や感性を磨き続ける武道・芸術の側面。その両方が交差する日々の探究の記録をまとめています。</p>
-            </section>
+    <main>
+        
+        <div class="content-section">
+            <h2>About Me</h2>
+            <p>製造業で設備開発・DX推進・現場改善に携わるエンジニアであり、同時にライフワークとして武道の道を歩んでいます。</p>
+            <p>論理的な<strong>システム思考</strong>と、武道を通じて培った<strong>精神性</strong>を融合させ、現場のリアルとデジタルの可能性、工程とシステム、そこで働く人と組織を心地よくつなぐことに情熱を注いでいます。</p>
+        </div>
 
-            <div class="grid">
-                <a href="work.html" class="card">
-                    <h3>仕事 / Work</h3>
-                    <p>自動車製造の未来を切り拓け。最新の技術を駆使した設備・生産ラインの3Dシミュレーションなど、製造技術エンジニアとしての情熱と、仕事におけるロジカルな挑戦の記録。</p>
-                </a>
+        <div class="grid-container">
+            
+            <a href="work.html" class="card">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400" alt="Work" class="card-img">
+                <div class="card-content">
+                    <h2>仕事 💼</h2>
+                    <p>日産自動車(株)でのキャリア、技術開発から部門DX推進、そこで社内コミュニティ（育児両立ERG）の運営まで。</p>
+                </div>
+            </a>
 
-                <a href="iai.html" class="card">
-                    <h3>居合 / Iaido</h3>
-                    <p>無外流 鵬玉会の内弟子として日々白刃を研ぎ澄ます。仮想の敵を眼前に描き、ミリ単位の刃筋を追求する。日常の家庭や心にも活きる「静」と「丸」の武道精神。</p>
-                </a>
+            <a href="iai.html" class="card">
+                <img src="IMG_6145.jpeg" alt="Iaido" class="card-img">
+                <div class="card-content">
+                    <h2>居合 ⚔️</h2>
+                    <p>無外流 鵬玉会での内弟子としての修行。日常の家庭や子育てにも活きる、研ぎ澄まされた武道精神の探求。</p>
+                </div>
+            </a>
 
-                <a href="music.html" class="card">
-                    <h3>音楽 / Music</h3>
-                    <p>クラシック音楽や金管楽器が奏でる奥深い魅力。これまで熱中されてきたトランペットの経験や、ハンスホイヤーとヤマハのフレンチホルンとの出会い、その美しい音色への探究心。</p>
-                </a>
+            <a href="music.html" class="card">
+                <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=400" alt="Music" class="card-img">
+                <div class="card-content">
+                    <h2>音楽 🎺</h2>
+                    <p>ピアノやトランペットの経験を原点に、アンサンブルの編曲や、居合道大会での音響演出チーフとしてのこだわり。</p>
+                </div>
+            </a>
 
-                <a href="sake.html" class="card">
-                    <h3>お酒 / Sake</h3>
-                    <p>日本酒とスコッチウイスキー。蔵人のこだわりや料理との「至高のペアリング」を深く味わう。妻が誕生日サプライズで企画してくれた、忘れられない越後湯沢の酒探しの旅。</p>
-                </a>
-            </div>
-        </main>
+            <a href="sake.html" class="card">
+                <img src="IMG_7568.png" alt="Sake" class="card-img">
+                <div class="card-content">
+                    <h2>お酒 🍶</h2>
+                    <p>夫婦共通の趣味である日本酒。美味しい料理と合わせて語り合う贅沢な時間と、一期一会の銘柄との出会い。</p>
+                </div>
+            </a>
 
-        <footer>
-            <p>&copy; 2026 Jin. All Rights Reserved.</p>
-        </footer>
-    </div>
+        </div>
+
+        <div class="content-section" style="text-align: center;">
+            <h2>My Core Values</h2>
+            <p>プライベートでは、居合で心身を整え、音楽で場と表現を紡ぎ、お酒で大切な人との豊かな時間を楽しんでいます。</p>
+            <p style="font-size: 0.85rem; color: var(--accent-color); margin-top: 10px;">それぞれの詳細な哲学やこだわりは、上の各カードからご覧ください。</p>
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Hitoshi. All Rights Reserved.
+    </footer>
 
 </body>
 </html>
