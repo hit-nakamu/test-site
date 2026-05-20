@@ -14,7 +14,7 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 0;
@@ -58,6 +58,7 @@
             margin-bottom: 25px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border-left: 4px solid var(--accent-color);
         }
         h2 {
             color: #ffffff;
@@ -65,6 +66,7 @@
             margin-top: 0;
             border-bottom: 1px solid #333;
             padding-bottom: 10px;
+            margin-bottom: 20px;
         }
         .sake-banner {
             width: 100%;
@@ -92,6 +94,25 @@
             color: #ffffff;
             font-size: 0.9rem;
         }
+        .bottom-nav {
+            border: none !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            padding: 20px 0 !important;
+            text-align: center;
+        }
+        .bottom-nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .bottom-nav-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
         @media (max-width: 480px) {
             section { padding: 20px; }
             .sake-list { grid-template-columns: repeat(2, 1fr); }
@@ -109,12 +130,12 @@
         <img src="https://images.unsplash.com/photo-1609951651556-5334e2706168?q=80&w=800" alt="Japanese Sake" class="sake-banner">
 
         <section>
-            <h2>お酒を通じて、文化と時間を深く探く味わう</h2>
-            <p>日本酒とスコッチウイスキーを特に嗜みます。私にとってお酒を飲むということは、単に酔うための行為ではなく、そのボトルが生まれるまでの伝統的なストーリー、蔵人のこだわり、そしてその日の料理との「至高のペアリング」をロジカルに探求する知的な冒険でもあります。</p>
-            <p>そして何より、お酒は大切な人との対話を豊かにしてくれる最高の媒介です。我が家では日本酒が夫婦共通の深い趣味になっており、週末に新しく手に入れた一本を開け、その味わいについて語り合う時間を何より大切にしています。</p>
+            <h2>お酒を通じて、文化と時間を深く探求し味わう</h2>
+            <p>日本酒とスコッチウイスキーを特に嗜みます。私にとってお酒を飲むということは、単に酔うための行為ではなく、そのボトルが生まれるまでの伝統的なストーリー、蔵人のこだわり、配置やその日の料理との「至高のペアリング」をロジカルに探求する知的な冒険でもあります。</p>
+            <p>アンド何より、お酒は大切な人との対話を豊かにしてくれる最高の媒介です。我が家では日本酒が夫婦共通の深い趣味になっており、週末に新しく手に入れた一本を開け、その味わいについて語り合う時間を何より大切にしています。</p>
         </section>
 
-        <section style="border-left: 2px solid var(--accent-color); background: #161616;">
+        <section style="background: linear-gradient(180deg, #1e1e1e 0%, #1c221a 100%);">
             <h2>忘れられない思い出：誕生日サプライズ酒探しの旅</h2>
             <p>これまでの日本酒ライフの中で最高の思い出となっているのは、私の誕生日に妻が企画してくれたサプライズ旅行です。</p>
             <p>当日、行き先を一切告げられないまま新幹線に乗せられ、到着した先は雪国・新潟の<strong>「越後湯沢」</strong>でした。駅にある「ぽんしゅ館」で数々の銘酒を驚きと共にテイスティングし、地元の酒屋を巡りながら最高の隠れた地酒を探索したあの時間は、今でも夫婦の宝物です。お酒そのものの美味しさはもちろんですが、その移動のプロセス、旅の空気感すべてが、日本酒への愛着をさらに深いものにしてくれました。</p>
@@ -134,7 +155,17 @@
             </ul>
             
             <p style="margin-top: 25px;">実は、これほど多くの素晴らしいお酒に巡り合いながらも、私の心の中で<strong>「この一本で人生が完全に変わった！」と言い切れる究極の『運命の1本』には、まだ出会っていません。</strong></p>
-            <p>しかし、だからこそ面白い。妻と共に「まだ見ぬ至高の1本」を求め、エピソードや料理との相性を探究し、語り合う。その果てしないプロセスそのものこそが、私の人生を豊かにしてくれる、何よりの美味しい贅沢なのだと感じています。</p>
+            <p>しかし、だからこそ面白い。妻と共に「まだ見ぬ至高の1本」を求め、エピソードや料理との相性を探究し、語り合う。その果てしないプロセスそのものこそが、私の人生を豊かにしてくれる、何より贅沢な時間なのだと感じています。</p>
+        </section>
+
+        <section class="bottom-nav">
+            <p style="font-size: 0.9rem; color: #888; margin: 0;">他のページを見る</p>
+            <div class="bottom-nav-links">
+                <a href="work.html">仕事 💼</a>
+                <a href="iai.html">居合 ⚔️</a>
+                <a href="music.html">音楽 🎺</a>
+                <a href="index.html" style="color: #888;">トップ 🏠</a>
+            </div>
         </section>
     </main>
 </body>
