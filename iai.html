@@ -5,157 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>居合 - 仁</title>
     <style>
-        :root {
-            --bg-color: #0d0d0d;
-            --text-color: #e0e0e0;
-            --accent-color: #c9a063;
-            --card-bg: #161616;
-        }
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Georgia', 'Times New Roman', 'Hiragino Mincho ProN', 'MS Mincho', serif;
-            line-height: 1.9;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-        header {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 30px 20px 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-sizing: border-box;
-        }
-        header h1 {
-            color: #ffffff;
-            margin: 0;
-            font-size: calc(1.4rem + 1vw);
-            letter-spacing: 0.15em;
-            white-space: nowrap;
-        }
-        .back-link {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-family: sans-serif;
-            white-space: nowrap;
-            margin-left: 10px;
-        }
-        main {
-            max-width: 800px;
-            margin: 10px auto 60px auto;
-            padding: 0 15px;
-            box-sizing: border-box;
-        }
-        @keyframes pageFadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-section {
-            animation: pageFadeIn 1.2s ease-out forwards;
-        }
-        section {
-            background-color: var(--card-bg);
-            padding: 35px;
-            margin-bottom: 25px;
-            border-radius: 4px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            border: 1px solid #222;
-        }
-        .iai-img {
-            width: 100%;
-            height: auto;
-            max-height: 350px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 25px;
-            border: 1px solid #333;
-        }
-        .quote-box {
-            border-top: 1px solid var(--accent-color);
-            border-bottom: 1px solid var(--accent-color);
-            padding: 20px;
-            text-align: center;
-            background-color: #111;
-            margin: 25px 0;
-        }
-        .quote-title {
-            color: var(--accent-color);
-            font-size: calc(1.05rem + 0.3vw);
-            font-weight: bold;
-            letter-spacing: 0.1em;
-        }
-        h2 {
-            color: #ffffff;
-            font-size: 1.3rem;
-            margin-top: 0;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-        }
-        .bottom-nav {
-            border: none !important;
-            background: transparent !important;
-            box-shadow: none !important;
-            padding: 20px 0 !important;
-            text-align: center;
-        }
-        .bottom-nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-            font-family: sans-serif;
-        }
-        .bottom-nav-links a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
+        :root { --bg-color: #0d0d0d; --text-color: #e0e0e0; --accent-color: #c9a063; --card-bg: #161616; }
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: 'Hiragino Mincho ProN', serif; line-height: 1.9; margin: 0; padding: 0; }
+        header { max-width: 800px; margin: 0 auto; padding: 30px 20px 10px 20px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { color: #ffffff; margin: 0; font-size: calc(1.4rem + 1vw); letter-spacing: 0.15em; }
+        .back-link { color: var(--accent-color); text-decoration: none; font-size: 0.9rem; font-family: sans-serif; }
+        main { max-width: 800px; margin: 10px auto 60px auto; padding: 0 15px; box-sizing: border-box; }
+        @keyframes pageFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-section { animation: pageFadeIn 1.2s ease-out forwards; }
+        section { background-color: var(--card-bg); padding: 35px; margin-bottom: 25px; border-radius: 4px; border: 1px solid #222; }
+        .iai-img { width: 100%; height: auto; max-height: 350px; object-fit: cover; border-radius: 4px; margin-bottom: 25px; border: 1px solid #333; }
+        .quote-box { border-top: 1px solid var(--accent-color); border-bottom: 1px solid var(--accent-color); padding: 15px; text-align: center; background-color: #111; margin: 25px 0; }
+        .quote-title { color: var(--accent-color); font-size: 1.1rem; letter-spacing: 0.1em; }
+        h2 { color: #ffffff; font-size: 1.3rem; margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .bottom-nav { border: none !important; background: transparent !important; padding: 20px 0 !important; text-align: center; }
+        .bottom-nav-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px; font-family: sans-serif; }
+        .bottom-nav-links a { color: var(--accent-color); text-decoration: none; font-size: 0.95rem; }
         p { margin-bottom: 20px; }
-        strong { color: #ffffff; }
         ul { padding-left: 20px; margin-bottom: 20px; }
         li { margin-bottom: 12px; }
-        @media (max-width: 480px) { section { padding: 20px; } header { padding: 25px 15px 10px 15px; } }
     </style>
 </head>
 <body>
-
     <header>
         <h1>Iaido / 居合</h1>
         <a href="index.html" class="back-link">← トップへ</a>
     </header>
 
     <main class="animate-section">
-        <img src="IMG_6145.jpeg" alt="愛用している居合刀の美しい佇まい" class="iai-img">
+        <img src="IMG_6145.jpeg" alt="愛用している居合刀" class="iai-img">
 
         <section>
-            <h2>無外流 鵬玉会との出会い</h2>
-            <p>コロナ禍が明け、「無理のない範囲で、一生をかけて心身を鍛えられるものを」と考え、出会ったのが<strong>国際居合道連盟 鵬玉会（ほうぎょくかい）</strong>でした。江戸時代から300年以上受け継がれてきた実戦居合「無外流（むがいりゅう）」の、一切の無駄を削ぎ落とした研ぎ澄まされた美しさに強い衝撃を受け、自然と日本刀の世界へと深く没頭していきました。</p>
-            <p>毎日の自宅での自主稽古と、週に複数回の道場通いを重ねる中でその姿勢を評価いただき、現在は<strong>内弟子（uchideshi）</strong>として、単なる習い事の枠を超え、武道の精神を日常の生き方そのものに昇華させる修行を続けています。</p>
+            <h2>無外流 鵬玉会での稽古</h2>
+            <p>日常の中で心身を整え、一生をかけて向き合えるものを探す中で、国際居合道連盟 鵬玉会（ほうぎょくかい）に出会いました。江戸時代から続く実戦居合「無外流（むがいりゅう）」の、無駄のない洗練された所作に魅了され、日々の稽古を続けています。</p>
+            <p>現在は内弟子（uchideshi）としての自覚を持ち、単なる技術の習得に留まらず、武道の精神を日常の振る舞いや生き方にどう活かしていくかを大切にしています。</p>
         </section>
 
         <section>
-            <h2>日常に活きる武道精神：心は常に「静」、そして丸くあれ</h2>
+            <h2>日常に活きる武道精神：心は常に「静」に</h2>
             <div class="quote-box">
                 <div class="quote-title">「心は常に『静』、形成（所作）は〇くあれ」</div>
             </div>
-            <p>鵬玉会で重んじられるこの教えは、私の人生、特に家庭で幼い子どもたちと向き合う瞬間に大きな変化をもたらしました。</p>
-            <p>仕事で疲れているときや、日常の中でつい心がざわつき、強い言葉を使ってしまいそうになる瞬間があります。その一瞬にスッと深く呼吸を整え、刀を抜くときのように心を「静」に、相手を包み込むように「丸く」保つ。武道を通じて培ったこのブレない軸が、自分の中に確かな「許容の空白（余裕）」を生み出します。感情をぶつけるのではなく、余裕を持って子どもたちと接することで、互いに100%信頼し合える強い絆が育まれていると実感しています。</p>
+            <p>この教えは、私の日常生活、特に家庭で子どもたちと向き合う瞬間に大きな気づきを与えてくれました。</p>
+            <p>慌ただしい日々の中でつい心がざわつきそうになるとき、一呼吸置いて心を落ち着かせる。刀を抜くときのようにブレない軸を意識することで、自分の中に少しの「心のゆとり」が生まれます。感情に流されず、落ち着いて家族と接する時間が、お互いの穏やかな関係に繋がっていると感じています。</p>
         </section>
 
         <section>
-            <h2>武道としての追求：3拍子揃った「斬れる居合」</h2>
-            <p>鵬玉会が追求する居合の本質は、踊りのような美しさではなく、実戦に裏付けられた「強さ」です。形・組太刀・試し斬りの3つを三位一体で網羅することを目指しています。</p>
+            <h2>形・組太刀・試し斬りの追求</h2>
+            <p>無外流の居合は、形（かた）、組太刀（くみたち）、試し斬りの3つをバランスよく学ぶことを重視しています。</p>
             <ul>
-                <li><strong>形（かた）：</strong>仮想の敵を眼前に描き、ミリ単位の刃筋、足捌きを徹底的に身体に染み込ませます。例えば基本の一撃である「横一（よこいち）」の水平な鋭い一閃など、誰が見ても寸分の隙もない美しい所作を研ぎ澄まします。</li>
-                <li><strong>組太刀（くみたち）：</strong>木刀を合わせ、実在する相手とリアルな間合いを測り合います。呼吸を読み、一瞬の隙を突くことで、静止画ではなく「動く敵」に対する実践的な身体の使い方を習得します。</li>
-                <li><strong>試し斬り（抜刀）：</strong>「居合の本義は抜刀の一瞬にあり」。鵬玉会では実際に真剣を握り、畳表を斬ることで、自分の刃筋が本当に正しかったのか、ごまかしの利かない結末と向き合います。まさに<strong>「抜き即斬」</strong>の理合いの研究です。</li>
+                <li><strong>形（かた）：</strong>仮想の敵を想定し、足捌きや基本の一撃である「横一（よこいち）」などの刃筋を、正確に身体に染み込ませます。</li>
+                <li><strong>組太刀（くみたち）：</strong>木刀を用いて相手と実際に向き合い、間合いの感覚や呼吸の合わせ方を学びます。</li>
+                <li><strong>試し斬り：</strong>実際に真剣を用いて畳表を斬ることで、自分の刃筋が正しかったかをごまかしなく確認します。</li>
             </ul>
-            <p>鵬玉会の百足伝（ひゃくそくでん）にある、<em>「稽古には清水の末の細々と絶えず流るる心こそよき」</em>という言葉を大切にしています。一気に派手に動くのではなく、清水の湧き水が絶え間なく細く長く流れるように、毎日一歩ずつ、一生をかけて自分を磨き続ける非日常の空間が、ここにあります。</p>
+            <p>鵬玉会で大切にされている「稽古には清水の末の細々と絶えず流るる心こそよき」という言葉の通り、一度に大きく変わろうとするのではなく、湧き水が細く長く流れるように、毎日一歩ずつ丁寧に向き合う時間を大切にしています。</p>
         </section>
 
         <section class="bottom-nav">
