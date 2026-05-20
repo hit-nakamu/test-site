@@ -12,145 +12,36 @@
             --card-bg: #1e1e1e;
         }
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
-            line-height: 1.8;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
+            background-color: var(--bg-color); color: var(--text-color);
+            font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.8; margin: 0; padding: 0;
         }
         header {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 30px 20px 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            max-width: 800px; margin: 0 auto; padding: 30px 20px 10px 20px;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
         }
-        header h1 {
-            color: #ffffff;
-            margin: 0;
-            font-size: calc(1.6rem + 0.5vw);
-            letter-spacing: 0.1em;
-        }
-        .back-link {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-            padding: 5px 0;
-        }
-        main {
-            max-width: 800px;
-            margin: 10px auto 60px auto;
-            padding: 0 15px;
-            box-sizing: border-box;
-        }
-        @keyframes pageFadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-section {
-            animation: pageFadeIn 1.2s ease-out forwards;
-        }
-        section {
-            background-color: var(--card-bg);
-            padding: 35px;
-            margin-bottom: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            border-left: 4px solid var(--accent-color);
-        }
-        .erg-section {
-            border: 1px solid var(--accent-color);
-            border-left: 4px solid var(--accent-color);
-            background: linear-gradient(180deg, #1e1e1e 0%, #25211a 100%);
-        }
-        h2 {
-            color: #ffffff;
-            font-size: 1.3rem;
-            margin-top: 0;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .work-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 6px;
-            margin-bottom: 25px;
-            border: 1px solid #333;
-        }
-        .timeline-item {
-            border-left: 2px solid var(--accent-color);
-            padding-left: 20px;
-            margin-bottom: 30px;
-            position: relative;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 8px;
-            width: 10px;
-            height: 10px;
-            background-color: var(--accent-color);
-            border-radius: 50%;
-        }
-        .time {
-            font-size: 0.85rem;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-        .job-title {
-            color: #ffffff;
-            margin: 3px 0 8px 0;
-            font-size: 1.1rem;
-        }
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            padding: 0;
-            list-style: none;
-            margin-top: 15px;
-        }
-        .tech-tag {
-            background-color: #252525;
-            border: 1px solid #444;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            color: #ccc;
-        }
-        .bottom-nav {
-            border: none !important;
-            background: transparent !important;
-            box-shadow: none !important;
-            padding: 20px 0 !important;
-            text-align: center;
-        }
-        .bottom-nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-        .bottom-nav-links a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
+        header h1 { color: #ffffff; margin: 0; font-size: calc(1.6rem + 0.5vw); letter-spacing: 0.1em; }
+        .back-link { color: var(--accent-color); text-decoration: none; font-size: 0.9rem; }
+        main { max-width: 800px; margin: 10px auto 60px auto; padding: 0 15px; box-sizing: border-box; }
+        @keyframes pageFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-section { animation: pageFadeIn 1.2s ease-out forwards; }
+        section { background-color: var(--card-bg); padding: 35px; margin-bottom: 25px; border-radius: 8px; border-left: 4px solid var(--accent-color); }
+        .erg-section { background: linear-gradient(180deg, #1e1e1e 0%, #221e18 100%); }
+        h2 { color: #ffffff; font-size: 1.3rem; margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px; }
+        .work-img { width: 100%; height: 220px; object-fit: cover; border-radius: 6px; margin-bottom: 25px; border: 1px solid #333; }
+        .timeline-item { border-left: 2px solid var(--accent-color); padding-left: 20px; margin-bottom: 30px; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: -6px; top: 8px; width: 10px; height: 10px; background-color: var(--accent-color); border-radius: 50%; }
+        .time { font-size: 0.85rem; color: var(--accent-color); font-weight: bold; }
+        .job-title { color: #ffffff; margin: 3px 0 8px 0; font-size: 1.1rem; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; margin-top: 15px; }
+        .tech-tag { background-color: #252525; border: 1px solid #444; padding: 4px 12px; border-radius: 12px; font-size: 0.8rem; color: #ccc; }
+        .bottom-nav { border: none !important; background: transparent !important; padding: 20px 0 !important; text-align: center; }
+        .bottom-nav-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px; }
+        .bottom-nav-links a { color: var(--accent-color); text-decoration: none; font-size: 0.95rem; }
         ul { padding-left: 20px; }
         li { margin-bottom: 8px; }
-        @media (max-width: 480px) { section { padding: 20px; } }
     </style>
 </head>
 <body>
-
     <header>
         <h1>Work / Career</h1>
         <a href="index.html" class="back-link">← トップへ戻る</a>
@@ -161,61 +52,59 @@
 
         <section>
             <h2>プロフィール & 専門領域</h2>
-            <p>2011年に日本のモノづくりの基幹である自動車業界（日産自動車）へ入社。パワートレイン領域を中心に、リアルな「製造現場の改善」から「最先端設備の開発」、迅速な組織全体の「DX・デジタル戦略の策定」まで、ハードとソフトの両面からキャリアを構築してきました。</p>
-            <p>一貫して大切にしているのは、<strong>「現場のリアル（泥臭さ）」と「デジタルの力（洗練）」を泥臭くつなぐこと</strong>。技術をただ導入するだけでなく、そこで働く人が主役となる持続可能なシステム構築を得意としています。</p>
+            <p>2011年に自動車業界（日産自動車）へ入社。パワートレイン領域を中心に、製造現場の改善、新規設備の開発、部門のDX・デジタル戦略の推進など、ハードウェアとソフトウェアの両面からキャリアを歩んできました。</p>
+            <p>一貫して大切にしているのは、<strong>「現場のリアルな課題」と「デジタル技術」を丁寧につなぐこと</strong>。ただ新しいシステムを導入するだけでなく、そこで働く人が実際に活用し、現場が自発的に回っていく仕組みづくりを心がけています。</p>
         </section>
 
         <section class="erg-section">
-            <h2>System Thinking in Community（DEI活動）</h2>
-            <p>2024年、社内の重要なDEI（ダイバーシティ・エクイティ&インクルージョン）の一環として、会社公認の有志団体<strong>「育児両立ERG（Employee Resource Group）」</strong>をゼロから立ち上げ、代表に就任しました。現在は<strong>約330名</strong>が所属する、社内最大規模の巨大コミュニティへと成長を遂げています。</p>
-            <p>この組織設計・運営には、エンジニアとして培った「システム思考」をフルに転用しています。発足時に「ビジョン」とそれを支える「3本の柱」を論理的に構造化し、持続可能で熱量のあるエコシステム（仕組み）を作ることで、孤独になりがちな育児世代が自発的に繋がり、支え合える環境を社内に構築しました。</p>
+            <h2>社内コミュニティでの試み（育児両立ERG）</h2>
+            <p>2024年、社内のDEI（ダイバーシティ・エクイティ&インクルージョン）活動の一環として、会社公認の有志団体<strong>「育児両立ERG」</strong>を立ち上げ、代表を務めています。現在は約330名のメンバーが在籍する組織となっています。</p>
+            <p>このコミュニティの設計や運営には、エンジニアとしてのシステム思考を応用しています。発足時に活動のビジョンと目的を整理し、メンバーが自発的に繋がりを深め、支え合える持続可能な仕組みを作ることで、仕事と育児を両立する社員の心理的な支えとなる環境を目指しています。</p>
         </section>
 
         <section>
-            <h2>職務経歴・実績</h2>
+            <h2>職務経歴・歩み</h2>
             
             <div class="timeline-item">
+                <span class="time">大学・大学院時代</span>
+                <h3 class="job-title">情報・工学領域の専攻</h3>
+                <p>学生時代は情報系の分野を専攻。現在のデジタル活用やシステム設計の基礎となる、論理的思考やデータ構造の扱い方を学びました。また、部活動での音楽活動を通じて、チームで一つのものを創り上げる経験を積みました。</p>
+            </div>
+
+            <div class="timeline-item">
                 <span class="time">2011年 〜</span>
-                <h3 class="job-title">エンジン生産技術（いわき工場）</h3>
-                <p>V6エンジン組立ラインの生産技術員として、現行ラインの維持・改善、新規ライン立ち上げを担当。数ミリ単位の現場調整から品質・コストの最適化を叩き込まれました。</p>
+                <h3 class="job-title">エンジン生産技術（現場改善とライン立ち上げ）</h3>
+                <p>いわき工場にて、V6エンジン組立ラインの生産技術員として勤務。現場の細かな調整、品質改善、新規ラインの立ち上げに携わり、モノづくりの基礎を学びました。</p>
             </div>
 
             <div class="timeline-item">
                 <span class="time">2015年 〜</span>
-                <h3 class="job-title">設備システム・PDM導入・シミュレーション推進</h3>
-                <p>設備システムグループ、および技術企画部署にて、PDM（製品情報管理）システムの導入企画・実行を担当。設備・生産ラインの3Dシミュレーションの適用を大幅に拡大し、生産技術領域のデジタル化・データ基盤の共通化を牽引しました。</p>
+                <h3 class="job-title">設備システム・3Dデータ活用の推進</h3>
+                <p>技術企画部署にて、PDM（製品情報管理）システムの導入や、生産ラインの3Dシミュレーションの適用拡大を担当。生産技術領域のデジタル化とデータ基盤の共通化に取り組みました。</p>
             </div>
 
             <div class="timeline-item">
                 <span class="time">2020年 〜</span>
-                <h3 class="job-title">次世代ASSB生産設備開発（グループ総括）</h3>
-                <p>次世代自動車の鍵を握る「全固体電池（ASSB）」生産設備の開発を担当。製品開発と設備開発を完全並行（コンカレント）で進める極めて不確実性の高い最先端領域において、セル工程以降の設備開発を総括グループとしてリードしました。</p>
+                <h3 class="job-title">次世代バッテリー生産設備の開発マネジメント</h3>
+                <p>全固体電池（ASSB）の生産設備開発プロジェクトに参画。製品設計と並行して進める難度の高い領域において、工程の設備開発を統括するグループをリードしました。</p>
             </div>
 
             <div class="timeline-item">
-                <span class="time">2023年 〜</span>
-                <h3 class="job-title">部門DX推進（デジタル戦略の策定と実行）</h3>
-                <p>部門全体のデジタル化を担う部署にて、DX戦略の立案から計画、具体的なソリューションの現場導入までを担当。「使われないシステム」を生まないために、現場の課題を丁寧にスクリーニングし、実効性の高いDXを推進しました。</p>
-            </div>
-
-            <div class="timeline-item">
-                <span class="time">2025年 〜 現在</span>
-                <h3 class="job-title">生産SCM領域（設備稼働監視システム開発）</h3>
-                <p>現在は情報システム（IS）部門にて、グローバル展開を見据えた工場の「設備稼働状態の見える化（監視システム）」の開発・マネジメントに従事しています。</p>
+                <span class="time">2023年 〜 現在</span>
+                <h3 class="job-title">部門DX推進 & 設備稼働監視システム開発</h3>
+                <p>部門全体のDX戦略の立案や現場へのソリューション導入を経て、現在は情報システム（IS）部門にて、グローバル展開を見据えた工場の設備稼働監視システムの開発・マネジメントに従事しています。</p>
             </div>
         </section>
 
         <section>
             <h2>技術スタック / スキル</h2>
-            <p>これまでのプロジェクトで培った、ハードウェア・ソフトウェア・マネジメントのハイブリッドなスキルセットです。</p>
             <ul class="tech-tags">
                 <li class="tech-tag">システム思考</li>
                 <li class="tech-tag">プロジェクトマネジメント</li>
-                <li class="tech-tag">コミュニティビルディング</li>
+                <li class="tech-tag">コミュニティ運営</li>
                 <li class="tech-tag">生産設備開発</li>
-                <li class="tech-tag">PDM / 3Dデータシミュレーション</li>
+                <li class="tech-tag">3Dシミュレーション活用</li>
                 <li class="tech-tag">データ可視化 (BI)</li>
-                <li class="tech-tag">SCMシステム構築</li>
                 <li class="tech-tag">第一級陸上特殊無線技士</li>
                 <li class="tech-tag">高等学校教諭免許状（情報）</li>
             </ul>
