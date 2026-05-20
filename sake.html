@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お酒 - 仁</title>
+    <title>お酒 - Hitoshi</title>
     <style>
         :root {
             --bg-color: #121212;
@@ -18,116 +18,155 @@
             line-height: 1.8;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+            overflow-x: hidden;
         }
         header {
-            width: 100%;
-            max-width: 760px;
-            padding: 40px 20px 20px 20px;
-            box-sizing: border-box;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px 20px 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         header h1 {
             color: #ffffff;
-            font-size: 1.8rem;
             margin: 0;
+            font-size: calc(1.5rem + 0.5vw);
             letter-spacing: 0.1em;
         }
         .back-link {
             color: var(--accent-color);
             text-decoration: none;
             font-size: 0.9rem;
-            letter-spacing: 0.05em;
-        }
-        .back-link:hover {
-            text-decoration: underline;
         }
         main {
-            max-width: 760px;
-            width: 100%;
-            padding: 0 20px 80px 20px;
+            max-width: 800px;
+            margin: 10px auto 60px auto;
+            padding: 0 15px;
             box-sizing: border-box;
         }
-        
-        /* 画像を他のページと合わせて綺麗に収めるコンテナ */
-        .page-card {
+        @keyframes pageFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-section {
+            animation: pageFadeIn 1.2s ease-out forwards;
+        }
+        section {
             background-color: var(--card-bg);
+            padding: 35px;
+            margin-bottom: 25px;
             border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            border: 1px solid #2a2a2a;
-            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border-left: 4px solid var(--accent-color);
         }
-        .card-img {
-            width: 100%;
-            height: 280px; /* 大きすぎず小さすぎない、他ページと馴染む高さ */
-            object-fit: cover;
-        }
-        .card-content {
-            padding: 30px;
-        }
-        .card-content h2 {
+        h2 {
             color: #ffffff;
             font-size: 1.3rem;
             margin-top: 0;
-            margin-bottom: 20px;
             border-bottom: 1px solid #333;
-            padding-bottom: 8px;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
-        .card-content p {
-            margin: 0 0 15px 0;
-            color: #bbbbbb;
+        .sake-banner {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            border: 1px solid #333;
+        }
+        .sake-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+            padding: 0;
+            list-style: none;
+            margin: 20px 0;
+        }
+        .sake-item {
+            background-color: #252525;
+            padding: 12px;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid #333;
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+        .bottom-nav {
+            border: none !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            padding: 20px 0 !important;
+            text-align: center;
+        }
+        .bottom-nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .bottom-nav-links a {
+            color: var(--accent-color);
+            text-decoration: none;
             font-size: 0.95rem;
         }
-        .card-content p:last-child {
-            margin-bottom: 0;
-        }
-
         @media (max-width: 480px) {
-            header { padding: 30px 20px 15px 20px; }
-            header h1 { font-size: 1.4rem; }
-            .card-img { height: 180px; }
-            .card-content { padding: 20px; }
-        }
-        footer {
-            margin-top: auto;
-            padding: 20px;
-            color: #666;
-            font-size: 0.8rem;
-            text-align: center;
-            width: 100%;
-            box-sizing: border-box;
-            border-top: 1px solid #1a1a1a;
+            section { padding: 20px; }
+            .sake-list { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>お酒 🍶</h1>
+        <h1>Sake / お酒</h1>
         <a href="index.html" class="back-link">← トップへ戻る</a>
     </header>
 
-    <main>
-        <div class="page-card">
-            <img src="IMG_7568.png" alt="Sake" class="card-img">
+    <main class="animate-section">
+        <img src="IMG_7568.png" alt="Japanese Sake" class="sake-banner">
+
+        <section>
+            <h2>日々の終わりに、日本酒を味わう贅沢な時間</h2>
+            <p>我が家にとって日本酒は、夫婦共通のいちばんの趣味です。週末はもちろん、日々の仕事や家事が一段落したあとに、新しく手に入れた一本を夫婦で開けて「これはすっきりしていて美味しいね」「この料理にすごく合う！」などと語り合う時間を何より大切にしています。</p>
+            <p>ただ飲むだけでなく、そのお酒が作られた地域の気候、蔵人さんのこだわり、その日の器や料理との相性をあれこれ探求するのが、とても楽しくて心地よい時間になっています。</p>
+        </section>
+
+        <section style="background: linear-gradient(180deg, #1e1e1e 0%, #1c221a 100%);">
+            <h2>夫婦のたいせつな思い出：越後湯沢サプライズ旅</h2>
+            <p>これまでの日本酒にまつわるお話の中で、いまも夫婦でよく話題に上る最高の思い出があります。それは、私の誕生日に妻が企画してくれたサプライズ旅行です。</p>
+            <p>当日、私はどこに行くのか一切知らされないまま新幹線に乗せられ、たどり着いた先は一面の雪国・新潟の「越後湯沢」でした。駅にある有名な「ぽんしゅ館」でいろいろな銘酒をワクワクしながらテイスティングしたり、地元の酒屋さんをのんびり巡って隠れた地酒を探したり。お酒そのものの美味しさはもちろんですが、その旅の空気感や妻の優しいおもてなしを含めて、日本酒がもっと大好きになる忘れられない1日になりました。</p>
+        </section>
+
+        <section>
+            <h2>一期一会の出会いを楽しんだ銘柄たち</h2>
+            <p>我が家ではお酒のコレクションはせず、「買ってきたら新鮮なうちに、その一期一会の味わいをすぐ楽しむ！」のがお決まりのスタイルです。これまでに夫婦で囲み、それぞれの個性を楽しんできたお気に入りの銘柄たちをご紹介します。</p>
             
-            <div class="card-content">
-                <h2>お酒を通じて、文化と時間を深く探求し味わう</h2>
-                <p>日本酒とスコッチウイスキーを特に嗜みます。私にとってお酒を飲むということは、単に酔うための行為ではなく、そのボトルが生まれるまでの伝統的なストーリー、蔵人のこだわり、そしてその日の料理との「至高のペアリング」をロジカルに探求する知的な冒険でもあります。</p>
-                <p>何より、お酒は大切な人との対話を豊かにしてくれる最高の媒介です。我が家では日本酒が夫婦共通の深い趣味になっており、週末に新しく手に入れた一本を開け、その味わいについて語り合う時間を何より大切にしています。</p>
+            <ul class="sake-list">
+                <li class="sake-item">田酒</li>
+                <li class="sake-item">鳳凰美田</li>
+                <li class="sake-item">花邑</li>
+                <li class="sake-item">まんさくの花</li>
+                <li class="sake-item">十四代</li>
+                <li class="sake-item">獺祭</li>
+            </ul>
+            
+            <p style="margin-top: 25px;">実は、これほどたくさんの素晴らしいお酒を飲んできても、「これが人生を完全に変えた運命の1本だ！」と言い切れる究極のボトルには、まだ出会っていません。</p>
+            <p>でも、だからこそ面白いのだと思っています。これからも妻と一緒に「まだ見ぬ最高の1本」をのんびり探し、美味しい料理と合わせては語り合う。その果てしない旅路そのものこそが、我が家にとって何よりの贅沢で、暮らしを豊かにしてくれる大切なスパイスです。</p>
+        </section>
+
+        <section class="bottom-nav">
+            <p style="font-size: 0.9rem; color: #888; margin: 0;">他のページを見る</p>
+            <div class="bottom-nav-links">
+                <a href="work.html">仕事 💼</a>
+                <a href="iai.html">居合 ⚔️</a>
+                <a href="music.html">音楽 🎺</a>
+                <a href="index.html" style="color: #888;">トップ 🏠</a>
             </div>
-        </div>
+        </section>
     </main>
-
-    <footer>
-        &copy; 2026 Hitoshi. All Rights Reserved.
-    </footer>
-
 </body>
 </html>
