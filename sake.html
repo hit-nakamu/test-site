@@ -1,10 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAKE | Our Portfolio</title>
+    <!-- Google Fonts: Noto Serif JP (格調高い明朝体) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;600;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           1. 共通変数 & リセットCSS
+           ========================================================================== */
+        :root {
+            --bg-color: #121212;        /* 漆黒・墨色 */
+            --card-bg: #1c1c1c;         /* 薄い墨色 */
+            --text-color: #e0e0e0;      /* 基本文字色 */
+            --accent-gold: #c9a063;     /* 落ち着いたゴールド */
+            --accent-red: #8b0000;      /* 差し色の朱赤・深紅 */
+            --font-serif: 'Noto Serif JP', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-serif);
+            line-height: 1.8;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        /* 全体のコンテンツフェードイン */
+        .fade-in-content {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: page-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        @keyframes page-reveal {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ==========================================================================
+           2. ヘッダー & 戻るリンク
+           ========================================================================== */
+        header {
+            padding: 60px 0 30px 0;
+            width: 100%;
+        }
+
+        .back-link {
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            display: inline-block;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .back-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--accent-gold);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-size: 2.3rem;
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            margin-top: 10px;
+        }
+
+        main {
+            width: 100%;
+            padding-bottom: 100px;
+        }
+
+        /* ==========================================================================
+           3. 日本酒への想い（トップ画像＋自己紹介セクション）
+           ========================================================================== */
+        .intro-section {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(201, 160, 99, 0.2);
+            border-left: 3px solid var(--accent-gold);
+            margin-bottom: 60px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            overflow: hidden;
+        }
+
+        /* トップのメイン画像エリア */
+        .intro-main-img-wrapper {
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(201, 160, 99, 0.2);
+        }
+
+        .intro-main-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            filter: contrast(105%);
+        }
+
+        /* 文章コンテンツエリア */
+        .intro-body {
+            padding: 35px 40px;
+        }
+
+        /* 四隅の朱赤フレーム演出 */
+        .intro-section::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 15px;
+            height: 15px;
+            border-top: 2px solid var(--accent-red);
+            border-left: 2px solid var(--accent-red);
+            z-index: 10;
+        }
+
+        .intro-section::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            right: -3px;
+            width: 15px;
+            height: 15px;
+            border-bottom: 2px solid var(--accent-red);
+            border-right: 2px solid var(--accent-red);
+            z-index: 10;
+        }
+
+        .intro-section h2 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid #333;
+            padding-bottom: 12px;
+        }
+
+        .intro-section p {
+            color: #bbbbbb;
+            font-size: 0.95rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ==========================================================================
+           4. 各銘柄のログ（横型の美しいカードスタイル）
+           ========================================================================== */
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            letter-spacing: 0.2em;
+            margin-bottom: 30px;
+            padding-left: 10px;
+            border-left: 2px solid var(--accent-red);
+        }
+
+        .sake-list {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .sake-card {
+            background-color: var(--card-bg);
+            border: 1px solid #2a2a2a;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .sake-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(201, 160, 99, 0.4);
+        }
+
+        .sake-img-wrapper {
+            width: 100%;
+            height: 100%;
+            min-height: 240px;
+            overflow: hidden;
+            background-color: #151515;
+            position: relative;
+        }
+
+        .sake-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(102%);
+            transition: transform 0.5s ease;
+        }
+
+        .sake-card:hover .sake-img {
+            transform: scale(1.03);
+        }
+
+        .sake-content {
+            padding: 25px 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sake-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        .sake-name {
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        .sake-stars {
+            color: var(--accent-gold);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        .sake-description {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            flex-grow: 1;
+            text-align: justify;
+        }
+
+        .sake-taste-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .taste-tag {
+            font-size: 0.75rem;
+            background-color: rgba(201, 160, 99, 0.05);
+            color: var(--accent-gold);
+            padding: 2px 10px;
+            border: 1px solid rgba(201, 160, 99, 0.2);
+            border-radius: 3px;
+        }
+
+        /* ==========================================================================
+           5. レスポンシブ対応
+           ========================================================================== */
+        @media (max-width: 680px) {
+            .intro-main-img-wrapper {
+                height: 240px;
+            }
+            .intro-body {
+                padding: 25px 20px;
+            }
+            .sake-card {
+                grid-template-columns: 1fr;
+            }
+            .sake-img-wrapper {
+                height: 240px;
+                min-height: auto;
+            }
+            .sake-content {
+                padding: 20px;
+            }
+            .sake-header {
+                flex-direction: column;
+                gap: 5px;
+                align-items: flex-start;
+            }
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 40px 20px;
+            color: #555;
+            font-size: 0.8rem;
+            text-align: center;
+            width: 100vw;
+            box-sizing: border-box;
+            border-top: 1px solid #1a1a1a;
+            background-color: #0d0d0d;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fade-in-content">
+
+        <header>
+            <a href="index.html" class="back-link">← ポートフォリオに戻る</a>
+            <h1>お酒 / SAKE</h1>
+        </header>
+
         <main>
             
             <!-- 🍶 トップ画像＋自己紹介が融合した重厚セクション -->
             <div class="intro-section">
                 <div class="intro-main-img-wrapper">
-                    <!-- 最初の晩酌の雰囲気を伝えるメイン画像（例として1枚目を指定、お好みの画像に変更可能です） -->
-                    <img src="image_11.png" alt="日々の終わりに、日本酒を味わう贅沢な時間" class="intro-main-img">
+                    <!-- 晩酌の美しい佇まいを伝えるメイン画像として田酒の画像を設定 -->
+                    <img src="images/sake/IMG_2391.jpeg" alt="日々の終わりに、日本酒を味わう贅沢な時間" class="intro-main-img">
                 </div>
                 
                 <div class="intro-body">
@@ -22,7 +369,7 @@
                 <!-- 1. 新政 陽乃鳥 & 亜麻猫 -->
                 <div class="sake-card">
                     <div class="sake-img-wrapper">
-                        <img src="IMG_6505.jpeg" alt="新政 陽乃鳥 / 亜麻猫" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="images/sake/IMG_6505.jpeg" alt="新政 陽乃鳥 / 亜麻猫" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div style="display:none; width:100%; height:100%; justify-content:center; align-items:center; color:#444; font-size:0.8rem;">[ 写真未設定 ]</div>
                     </div>
                     <div class="sake-content">
@@ -44,7 +391,7 @@
                 <!-- 2. 獺祭 純米大吟醸 磨き二割三分 生 -->
                 <div class="sake-card">
                     <div class="sake-img-wrapper">
-                        <img src="IMG_6139.jpeg" alt="獺祭 磨き二割三分 生" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="images/sake/IMG_6139.jpeg" alt="獺祭 磨き二割三分 生" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div style="display:none; width:100%; height:100%; justify-content:center; align-items:center; color:#444; font-size:0.8rem;">[ 写真未設定 ]</div>
                     </div>
                     <div class="sake-content">
@@ -66,7 +413,7 @@
                 <!-- 3. 名倉山 大吟醸 -->
                 <div class="sake-card">
                     <div class="sake-img-wrapper">
-                        <img src="IMG_6079.jpeg" alt="名倉山 大吟醸" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="images/sake/IMG_6079.jpeg" alt="名倉山 大吟醸" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div style="display:none; width:100%; height:100%; justify-content:center; align-items:center; color:#444; font-size:0.8rem;">[ 写真未設定 ]</div>
                     </div>
                     <div class="sake-content">
@@ -88,7 +435,7 @@
                 <!-- 4. 新政 緋乃鳥 & 玄乃鳥 (2024) -->
                 <div class="sake-card">
                     <div class="sake-img-wrapper">
-                        <img src="IMG_5345.jpeg" alt="新政 緋乃鳥 / 玄乃鳥" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="images/sake/IMG_5345.jpeg" alt="新政 緋乃鳥 / 玄乃鳥" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div style="display:none; width:100%; height:100%; justify-content:center; align-items:center; color:#444; font-size:0.8rem;">[ 写真未設定 ]</div>
                     </div>
                     <div class="sake-content">
@@ -110,7 +457,7 @@
                 <!-- 5. 十四代 純米大吟醸 播州愛山 -->
                 <div class="sake-card">
                     <div class="sake-img-wrapper">
-                        <img src="IMG_4977.jpeg" alt="十四代 播州愛山" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="images/sake/IMG_4977.jpeg" alt="十四代 播州愛山" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div style="display:none; width:100%; height:100%; justify-content:center; align-items:center; color:#444; font-size:0.8rem;">[ 写真未設定 ]</div>
                     </div>
                     <div class="sake-content">
@@ -132,7 +479,7 @@
                 <!-- 6. 狼炎 ROUEN 純米60 -->
                 <div class="sake-card">
                     <div class="sake-img-wrapper">
-                        <img src="IMG_3652.jpeg" alt="狼炎 ROUEN" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="images/sake/IMG_3652.jpeg" alt="狼炎 ROUEN" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div style="display:none; width:100%; height:100%; justify-content:center; align-items:center; color:#444; font-size:0.8rem;">[ 写真未設定 ]</div>
                     </div>
                     <div class="sake-content">
@@ -154,7 +501,7 @@
                 <!-- 7. 水芭蕉 純米吟醸 生貯蔵酒 [春酒] -->
                 <div class="sake-card">
                     <div class="sake-img-wrapper">
-                        <img src="IMG_3648.jpeg" alt="水芭蕉 春酒" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="images/sake/IMG_3648.jpeg" alt="水芭蕉 春酒" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div style="display:none; width:100%; height:100%; justify-content:center; align-items:center; color:#444; font-size:0.8rem;">[ 写真未設定 ]</div>
                     </div>
                     <div class="sake-content">
@@ -163,7 +510,7 @@
                             <span class="sake-stars">★★★★☆</span>
                         </div>
                         <p class="sake-description">
-                            群馬の尾瀬の雪解け水を思わせる、水芭蕉の季節限定の「春酒」。ピンクのボトルと桜のひらひらが季節の訪れを感じさせてくれます。みずみずしく軽快な口当たりで、ほんのりとした優しい甘さが広がる、まさに春の穏やかな気候にぴったりの味。夫婦で季節の移り変わりを愛おしみながら楽しんだ、心地よい1本です。
+                            群馬の尾瀬の雪解け水を思わせる、水芭蕉の季節限定の「春酒」。ピンクのボトル and 桜のひらひらが季節の訪れを感じさせてくれます。みずみずしく軽快な口当たりで、ほんのりとした優しい甘さが広がる、まさに春の穏やかな気候にぴったりの味。夫婦で季節の移り変わりを愛おしみながら楽しんだ、心地よい1本です。
                         </p>
                         <div class="sake-taste-tags">
                             <span class="taste-tag">純米吟醸</span>
@@ -176,7 +523,7 @@
                 <!-- 8. 寿限無 JUGEMU 純米大吟醸 無濾過生原酒 -->
                 <div class="sake-card">
                     <div class="sake-img-wrapper">
-                        <img src="IMG_3549.jpeg" alt="寿限無" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="images/sake/IMG_3549.jpeg" alt="寿限無" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div style="display:none; width:100%; height:100%; justify-content:center; align-items:center; color:#444; font-size:0.8rem;">[ 写真未設定 ]</div>
                     </div>
                     <div class="sake-content">
@@ -198,7 +545,7 @@
                 <!-- 9. 郷宝 特別純米 きたしずく -->
                 <div class="sake-card">
                     <div class="sake-img-wrapper">
-                        <img src="IMG_2644.jpeg" alt="郷宝" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="images/sake/IMG_2644.jpeg" alt="郷宝" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div style="display:none; width:100%; height:100%; justify-content:center; align-items:center; color:#444; font-size:0.8rem;">[ 写真未設定 ]</div>
                     </div>
                     <div class="sake-content">
@@ -220,7 +567,7 @@
                 <!-- 10. 田酒 純米大吟醸 古城錦 四割五分 -->
                 <div class="sake-card">
                     <div class="sake-img-wrapper">
-                        <img src="IMG_2391.jpeg" alt="田酒 古城錦" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="images/sake/IMG_2391.jpeg" alt="田酒 古城錦" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div style="display:none; width:100%; height:100%; justify-content:center; align-items:center; color:#444; font-size:0.8rem;">[ 写真未設定 ]</div>
                     </div>
                     <div class="sake-content">
@@ -241,3 +588,12 @@
 
             </div>
         </main>
+
+        <footer>
+            &copy; 2026 Our Favorite Memories. All Rights Reserved.
+        </footer>
+
+    </div>
+
+</body>
+</html>
