@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIT-NAKAMU | PORTFOLIO</title>
+    <title>Hitoshi's Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;600;900&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
             --bg-color: #121212;        /* 漆黒・墨色 */
             --card-bg: #1c1c1c;         /* 薄い墨色 */
             --text-color: #e0e0e0;      /* 基本文字色 */
-            --accent-gold: #d4af37;     /* アクセントの金 */
+            --accent-gold: #c9a063;     /* 落ち着いたゴールド */
             --accent-red: #8b0000;      /* 差し色の朱赤・深紅 */
             --font-serif: 'Noto Serif JP', serif;
         }
@@ -33,12 +33,10 @@
             font-family: var(--font-serif);
             line-height: 1.8;
             overflow-x: hidden;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
 
         /* ==========================================================================
@@ -85,6 +83,12 @@
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+            width: 100%;
+            max-width: 900px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         body.loaded .fade-in-content {
@@ -93,250 +97,198 @@
         }
 
         /* ==========================================================================
-           3. ヘッダー & ナビゲーション
+           3. ヘッダー
            ========================================================================== */
         header {
-            padding: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            width: 100%;
         }
 
-        .logo h1 {
-            font-size: 1.5rem;
-            font-weight: 900;
-            letter-spacing: 0.2rem;
-            color: var(--accent-gold);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            font-size: 0.9rem;
-            letter-spacing: 0.1rem;
-            text-transform: uppercase;
-        }
-
-        nav a:hover {
-            color: var(--accent-gold);
-            text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
-        }
-
-        /* ==========================================================================
-           4. メインビジュアル (Hero Section)
-           ========================================================================== */
-        .hero {
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            padding: 4rem 2rem;
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero-container {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text h2 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            line-height: 1.4;
-            margin-bottom: 1.5rem;
+        header h1 {
             color: #ffffff;
-            letter-spacing: 0.1rem;
+            font-size: calc(2rem + 1vw);
+            margin: 0 0 10px 0;
+            letter-spacing: 0.2em;
+            font-weight: 900;
         }
 
-        .hero-text h2 span {
+        header p {
             color: var(--accent-gold);
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 0.1em;
         }
 
-        /* 写真エリア（重厚な枠線演出） */
-        .hero-image-wrapper {
+        main {
+            width: 100%;
+            padding-bottom: 80px;
+        }
+        
+        /* ==========================================================================
+           4. 自己紹介・コアバリューの共通スタイル（重厚フレーム追加）
+           ========================================================================== */
+        .content-section {
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #bbbbbb;
+            font-size: 0.95rem;
+            background-color: #181818;
+            padding: 25px 30px;
+            border: 1px solid rgba(201, 160, 99, 0.2);
             position: relative;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 12px;
-            background-color: rgba(0, 0, 0, 0.2);
         }
 
-        .hero-image-wrapper::before {
+        /* 四隅の朱赤フレーム演出 */
+        .content-section::before {
             content: '';
             position: absolute;
-            top: -5px;
-            left: -5px;
-            width: 20px;
-            height: 20px;
+            top: -3px;
+            left: -3px;
+            width: 15px;
+            height: 15px;
             border-top: 2px solid var(--accent-red);
             border-left: 2px solid var(--accent-red);
         }
 
-        .hero-image-wrapper::after {
+        .content-section::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            right: -5px;
-            width: 20px;
-            height: 20px;
+            bottom: -3px;
+            right: -3px;
+            width: 15px;
+            height: 15px;
             border-bottom: 2px solid var(--accent-red);
             border-right: 2px solid var(--accent-red);
         }
 
-        .hero-img {
-            width: 100%;
-            height: auto;
-            max-height: 450px;
-            object-fit: cover;
-            filter: grayscale(20%) contrast(105%);
-            transition: filter 0.5s ease;
+        .content-section h2 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid #333;
+            padding-bottom: 8px;
+            display: inline-block;
         }
 
-        .hero-image-wrapper:hover .hero-img {
+        .content-section p {
+            margin: 0 0 15px 0;
+        }
+
+        .content-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-section strong {
+            color: #ffffff;
+            border-bottom: 1px dotted var(--accent-gold);
+        }
+
+        /* ==========================================================================
+           5. グリッド & カードスタイル（道着写真対応）
+           ========================================================================== */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 50px 0;
+            width: 100%;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            text-decoration: none;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #2a2a2a;
+            border-left: 3px solid var(--accent-gold); /* 左側に金の縦線 */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(201, 160, 99, 0.2);
+            border-color: var(--accent-gold);
+            border-left-color: var(--accent-red); /* ホバーで朱赤に変化 */
+        }
+
+        .card-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            filter: grayscale(30%) contrast(105%);
+            transition: filter 0.3s ease;
+        }
+
+        /* 2番目のカード（居合）にアップロードされた道着写真を設定 */
+        .iai-card-img {
+            object-position: center top; /* 顔の付近が見えやすくなるよう上部を基準に */
+        }
+
+        .card:hover .card-img {
             filter: grayscale(0%) contrast(100%);
         }
 
-        /* ==========================================================================
-           5. 各セクション共通スタイル & スクロール連動用
-           ========================================================================== */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 2.5rem;
-            letter-spacing: 0.3rem;
-            position: relative;
-            display: inline-block;
-            color: #fff;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--accent-gold);
-        }
-
-        /* スクロールトリガー用の初期状態 */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-
-        .scroll-reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* カードのホバーエフェクト共通 */
-        .custom-card {
-            background-color: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            border-left: 3px solid var(--accent-gold);
-            padding: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
-        }
-
-        .custom-card:hover {
-            transform: translateY(-5px);
-            border-left-color: var(--accent-red);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-
-        .custom-card h4 {
-            font-size: 1.2rem;
-            color: #fff;
-            margin-bottom: 1rem;
-            letter-spacing: 0.1rem;
-        }
-
-        /* リストスタイル調整 */
-        .original-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .original-list li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.2rem;
-        }
-
-        .original-list li::before {
-            content: '・';
-            position: absolute;
-            left: 0;
-            color: var(--accent-gold);
-        }
-
-        /* ==========================================================================
-           6. SAKE (日本酒ログセクション)
-           ========================================================================== */
-        .sake-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        .sake-item {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 2rem;
-            align-items: start;
-        }
-
-        .sake-img-placeholder {
-            width: 100%;
-            height: 200px;
-            background-color: #252525;
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+        }
+
+        .card-content h2 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin: 0 0 10px 0;
+            display: flex;
             align-items: center;
-            color: #555;
-            font-size: 0.8rem;
-            border: 1px solid rgba(212, 175, 55, 0.1);
+            gap: 8px;
+            border-bottom: none;
+            padding-bottom: 0;
+            letter-spacing: 0.05em;
         }
 
-        .sake-meta {
+        .card-content p {
             font-size: 0.85rem;
-            color: var(--accent-gold);
-            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            margin: 0;
+            color: #aaaaaa;
+        }
+        
+        /* ==========================================================================
+           6. レスポンシブ対応
+           ========================================================================== */
+        @media (max-width: 840px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .sake-stars {
-            color: var(--accent-gold);
-            margin-left: 1rem;
-        }
-
-        /* モバイル対応レスポンシブ */
-        @media (max-width: 768px) {
-            .hero-container, .sake-item {
+        @media (max-width: 480px) {
+            .grid-container {
                 grid-template-columns: 1fr;
             }
-            header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .hero-text h2 {
-                font-size: 2rem;
-            }
+            header { padding: 40px 20px 25px 20px; }
+            .content-section { padding: 20px; font-size: 0.9rem; }
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 30px 20px;
+            color: #555;
+            font-size: 0.8rem;
+            text-align: center;
+            width: 100vw;
+            box-sizing: border-box;
+            border-top: 1px solid #1a1a1a;
+            background-color: #0d0d0d;
         }
     </style>
 </head>
@@ -349,76 +301,64 @@
     <div class="fade-in-content">
 
         <header>
-            <div class="logo">
-                <h1>HIT-NAKAMU</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#work">WORK</a></li>
-                    <li><a href="#iai">IAI</a></li>
-                    <li><a href="#music">MUSIC</a></li>
-                    <li><a href="#sake">SAKE</a></li>
-                </ul>
-            </nav>
+            <h1>仁 / Hitoshi</h1>
+            <p>My Pieces of Life</p>
         </header>
 
-        <section class="hero">
-            <div class="hero-container">
-                <div class="hero-text">
-                    <h2>Welcome to my portfolio.<br>I am <span>HIT-NAKAMU</span>.</h2>
-                </div>
-                <div class="hero-image-wrapper">
-                    <img src="IMG_6099.jpeg" alt="HIT-NAKAMU" class="hero-img">
-                </div>
+        <main>
+            
+            <div class="content-section scroll-reveal">
+                <h2>About Me</h2>
+                <p>製造業で設備開発・DX推進・現場改善に携わるエンジニアであり、同時にライフワークとして武道の道を歩んでいます。</p>
+                <p>論理的な<strong>システム思考</strong>と、武道を通じて培った<strong>精神性</strong>を融合させ、現場のリアルとデジタルの可能性、工程とシステム、そこで働く人と組織を心地よくつなぐことに情熱を注いでいます。</p>
             </div>
-        </section>
 
-        <section id="work" class="scroll-reveal">
-            <h3 class="section-title">WORK</h3>
-            <div class="custom-card">
-                <h4>経歴</h4>
-                <ul class="original-list" style="color: #b0b0b0;">
-                    <li>自動車メーカー勤務</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="iai" class="scroll-reveal">
-            <h3 class="section-title">IAI (居合道)</h3>
-            <div class="custom-card">
-                <h4>居合について</h4>
-                <p style="color: #b0b0b0;">週3で道場に通って稽古しています。家でも毎日刀を振っています。</p>
-            </div>
-        </section>
-
-        <section id="music" class="scroll-reveal">
-            <h3 class="section-title">MUSIC</h3>
-            <div class="custom-card">
-                <h4>音楽について</h4>
-                <p style="color: #b0b0b0;">幼少からピアノ、中学からトランペット、高校から指揮、をやってきました。</p>
-            </div>
-        </section>
-
-        <section id="sake" class="scroll-reveal">
-            <h3 class="section-title">SAKE</h3>
-            <div class="sake-grid">
+            <div class="grid-container">
                 
-                <div class="custom-card sake-item">
-                    <div class="sake-img-wrapper">
-                        <div class="sake-img-placeholder">お酒の写真エリア</div>
+                <a href="work.html" class="card scroll-reveal">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400" alt="Work" class="card-img">
+                    <div class="card-content">
+                        <h2>仕事 💼</h2>
+                        <p>日産自動車(株)でのキャリア、技術開発から部門DX推進、そこで社内コミュニティ（育児両立ERG）の運営まで。</p>
                     </div>
-                    <div class="sake-content">
-                        <div class="sake-meta">2026.06.19<span class="sake-stars">★★★★★</span></div>
-                        <h4 style="margin-bottom: 0.5rem;">お気に入りのお酒（例）</h4>
-                        <p style="color: #b0b0b0;">お気に入りのお酒について都度都度書き足していくエリアです。</p>
+                </a>
+
+                <a href="iai.html" class="card scroll-reveal">
+                    <img src="IMG_6099.jpeg" alt="Iaido" class="card-img iai-card-img">
+                    <div class="card-content">
+                        <h2>居合 ⚔️</h2>
+                        <p>無外流 鵬玉会での内弟子としての修行。日常の家庭や子育てにも活きる、研ぎ澄まされた武道精神の探求。</p>
                     </div>
-                </div>
+                </a>
+
+                <a href="music.html" class="card scroll-reveal">
+                    <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=400" alt="Music" class="card-img">
+                    <div class="card-content">
+                        <h2>音楽 🎺</h2>
+                        <p>ピアノやトランペットの経験を原点に、アンサンブルの編曲や、居合道大会での音響演出チーフとしてのこだわり。</p>
+                    </div>
+                </a>
+
+                <a href="sake.html" class="card scroll-reveal">
+                    <img src="IMG_7568.png" alt="Sake" class="card-img">
+                    <div class="card-content">
+                        <h2>お酒 🍶</h2>
+                        <p>夫婦共通の趣味である日本酒。美味しい料理と合わせて語り合う贅沢な時間と、一期一会の銘柄との出会い。</p>
+                    </div>
+                </a>
 
             </div>
-        </section>
 
-        <footer style="text-align: center; padding: 4rem 2rem; color: #555; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.02);">
-            <p>&copy; 2026 HIT-NAKAMU. All Rights Reserved.</p>
+            <div class="content-section scroll-reveal" style="text-align: center;">
+                <h2>My Core Values</h2>
+                <p>プライベートでは、居合で心身を整え、音楽で場と表現を紡ぎ、お酒で大切な人との豊かな時間を楽しんでいます。</p>
+                <p style="font-size: 0.85rem; color: var(--accent-gold); margin-top: 10px;">それぞれの詳細な哲学やこだわりは、上の各カードからご覧ください。</p>
+            </div>
+
+        </main>
+
+        <footer>
+            &copy; 2026 Hitoshi. All Rights Reserved.
         </footer>
 
     </div>
@@ -430,22 +370,28 @@
                 document.body.classList.add('loaded');
             }, 600);
 
-            // スクロール連動フェードイン
+            // 各セクションのスクロールフェードイン効果
             const scrollElements = document.querySelectorAll('.scroll-reveal');
             
             const elementObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
                     }
                 });
             }, {
                 root: null,
-                threshold: 0.1,
-                rootMargin: "0px 0px -50px 0px"
+                threshold: 0.05
             });
 
-            scrollElements.forEach(el => elementObserver.observe(el));
+            // 初期スタイルの設定と監視開始
+            scrollElements.forEach(el => {
+                el.style.opacity = "0";
+                el.style.transform = "translateY(30px)";
+                el.style.transition = "opacity 1s ease, transform 1s ease";
+                elementObserver.observe(el);
+            });
         });
     </script>
 </body>
