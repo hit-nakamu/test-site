@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAKE | Hitoshi's Portfolio</title>
+    <!-- Google Fonts: Noto Serif JP -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;600;900&display=swap" rel="stylesheet">
@@ -102,58 +103,114 @@
             margin-top: 10px;
         }
 
-        header p {
-            color: #888;
-            font-size: 0.95rem;
-            margin-top: 5px;
-        }
-
         main {
             width: 100%;
             padding-bottom: 100px;
         }
 
         /* ==========================================================================
-           3. 日本酒ログ リストスタイル
+           3. 日本酒への想い（自己紹介セクション・画像10の再現）
            ========================================================================== */
+        .intro-section {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(201, 160, 99, 0.2);
+            border-left: 3px solid var(--accent-gold);
+            padding: 35px 40px;
+            margin-bottom: 60px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        /* 四隅の朱赤フレーム演出 */
+        .intro-section::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 15px;
+            height: 15px;
+            border-top: 2px solid var(--accent-red);
+            border-left: 2px solid var(--accent-red);
+        }
+
+        .intro-section::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            right: -3px;
+            width: 15px;
+            height: 15px;
+            border-bottom: 2px solid var(--accent-red);
+            border-right: 2px solid var(--accent-red);
+        }
+
+        .intro-section h2 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid #333;
+            padding-bottom: 12px;
+        }
+
+        .intro-section p {
+            color: #bbbbbb;
+            font-size: 0.95rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ==========================================================================
+           4. 各銘柄のログ（区切りタイトルとリスト）
+           ========================================================================== */
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            letter-spacing: 0.2em;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 2px solid var(--accent-red);
+        }
+
         .sake-list {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 30px;
         }
 
         .sake-card {
             background-color: var(--card-bg);
             border: 1px solid #2a2a2a;
-            border-left: 3px solid var(--accent-gold);
             display: grid;
-            grid-template-columns: 220px 1fr;
+            grid-template-columns: 200px 1fr;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
         .sake-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent-gold);
-            border-left-color: var(--accent-red);
+            transform: translateY(-2px);
+            border-color: rgba(201, 160, 99, 0.4);
         }
 
-        /* お酒の写真エリア */
         .sake-img-wrapper {
             width: 100%;
             height: 100%;
-            min-height: 240px;
+            min-height: 200px;
             overflow: hidden;
             background-color: #151515;
-            position: relative;
         }
 
         .sake-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: contrast(105%);
+            filter: contrast(105%) grayscale(10%);
             transition: transform 0.5s ease;
         }
 
@@ -161,12 +218,10 @@
             transform: scale(1.03);
         }
 
-        /* お酒の情報エリア */
         .sake-content {
-            padding: 25px 30px;
+            padding: 20px 25px;
             display: flex;
             flex-direction: column;
-            justify-content: top;
         }
 
         .sake-header {
@@ -174,61 +229,63 @@
             justify-content: space-between;
             align-items: baseline;
             border-bottom: 1px solid #2a2a2a;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-
-        .sake-date {
-            font-size: 0.85rem;
-            color: #777;
-            letter-spacing: 0.05em;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .sake-name {
             color: #ffffff;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 600;
         }
 
         .sake-stars {
             color: var(--accent-gold);
-            font-size: 1.1rem;
-            letter-spacing: 2px;
+            font-size: 1rem;
+            letter-spacing: 1px;
         }
 
         .sake-description {
-            font-size: 0.95rem;
-            color: #bbbbbb;
-            line-height: 1.8;
-            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            line-height: 1.7;
+            margin-bottom: 12px;
             flex-grow: 1;
         }
 
-        /* 味わいパラメーター（オプション表示） */
         .sake-taste-tags {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
         }
 
         .taste-tag {
-            font-size: 0.75rem;
-            background-color: rgba(201, 160, 99, 0.1);
+            font-size: 0.7rem;
+            background-color: rgba(201, 160, 99, 0.05);
             color: var(--accent-gold);
-            padding: 2px 10px;
-            border: 1px solid rgba(201, 160, 99, 0.2);
-            border-radius: 2px;
+            padding: 1px 8px;
+            border: 1px solid rgba(201, 160, 99, 0.15);
+        }
+
+        .sake-date {
+            font-size: 0.8rem;
+            color: #666;
+            text-align: right;
+            margin-top: 10px;
         }
 
         /* ==========================================================================
-           4. レスポンシブ対応
+           5. レスポンシブ対応
            ========================================================================== */
         @media (max-width: 640px) {
+            .intro-section {
+                padding: 25px 20px;
+            }
             .sake-card {
                 grid-template-columns: 1fr;
             }
             .sake-img-wrapper {
-                height: 200px;
+                height: 180px;
                 min-height: auto;
             }
             .sake-content {
@@ -260,37 +317,47 @@
         <header>
             <a href="index.html" class="back-link">← ポートフォリオに戻る</a>
             <h1>お酒 / SAKE</h1>
-            <p>夫婦共通の趣味。美味しい料理と合わせて語り合う贅沢な時間と、一期一会の銘柄との出会い。</p>
         </header>
 
         <main>
+            
+            <!-- 🍶 画像10の文章をそのまま再現した「自己紹介・想い」エリア -->
+            <div class="intro-section">
+                <h2>日々の終わりに、日本酒を味わう贅沢な時間</h2>
+                <p>我が家にとって日本酒は、夫婦共通のいちばんの趣味です。週末はもちろん、日々の仕事や家事が一段落したあとに、新しく手に入れた一本を夫婦で開けて「これはすっきりしていて美味しいね」「この料理にすごく合う！」などと語り合う時間を何より大切にしています。</p>
+                <p>ただ飲むだけでなく、そのお酒が作られた地域の気候、蔵人さんのこだわり、その日の器や料理との相性をあれこれ探求するのが、とても楽しくて心地よい時間になっています。</p>
+            </div>
+
+            <!-- ここから下に出会ったお酒のログが積み重なる構成 -->
+            <h3 class="section-subtitle">一期一会の記録</h3>
+            
             <div class="sake-list">
 
+                <!-- ログアイテム1（ここをコピーして増やしていけます） -->
                 <div class="sake-card">
                     <div class="sake-img-wrapper">
+                        <!-- ここに新しく撮影したお酒の写真などを指定（なければ[写真未設定]になります） -->
                         <img src="IMG_7568.png" alt="日本酒" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div style="display:none; width:100%; height:100%; justify-content:center; align-items:center; color:#444; font-size:0.8rem;">[ 写真未設定 ]</div>
                     </div>
                     <div class="sake-content">
                         <div class="sake-header">
-                            <h2 class="sake-name">一期一会の銘柄名</h2>
+                            <h4 class="sake-name">銘柄名をここに記載</h4>
                             <span class="sake-stars">★★★★★</span>
                         </div>
                         <p class="sake-description">
-                            ここに飲んだお酒の感想を書き込んでいきます。お酒のフルーティーさや辛口のキレ、一緒に合わせたお料理（お肉、お刺身、チーズなど）との相性、夫婦でどんな会話をして楽しんだかなどを都度都度書き足していくのに最適なスペースです。
+                            ここにその日の料理との相性や、飲んだ感想などのディテールを都度書き足していきます。
                         </p>
                         <div class="sake-taste-tags">
-                            <span class="taste-tag">薫酒 (フルーティー)</span>
                             <span class="taste-tag">すっきり</span>
-                            <span class="taste-tag">料理に合う</span>
+                            <span class="taste-tag">薫酒</span>
                         </div>
-                        <div class="sake-header" style="border-bottom:none; margin-bottom:0; padding-bottom:0; margin-top:15px;">
-                            <span></span>
-                            <span class="sake-date">記録日: 2026.06.19</span>
-                        </div>
+                        <span class="sake-date">2026.06.19</span>
                     </div>
                 </div>
-                </div>
+                <!-- ログアイテム（ここまで） -->
+
+            </div>
         </main>
 
         <footer>
