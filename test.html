@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HIT-NAKAMU | PORTFOLIO</title>
-    <!-- Google Fonts: Noto Serif JP -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;600;900&display=swap" rel="stylesheet">
@@ -343,15 +342,12 @@
 </head>
 <body>
 
-    <!-- 1. 刀の一閃 オープニングレイヤー -->
     <div id="loading-overlay">
         <div class="slash-line"></div>
     </div>
 
-    <!-- メメインコンテンツ（フェードイン対象） -->
     <div class="fade-in-content">
 
-        <!-- ヘッダーナビゲーション -->
         <header>
             <div class="logo">
                 <h1>HIT-NAKAMU</h1>
@@ -366,33 +362,27 @@
             </nav>
         </header>
 
-        <!-- メインビジュアルセクション -->
         <section class="hero">
             <div class="hero-container">
                 <div class="hero-text">
                     <h2>Welcome to my portfolio.<br>I am <span>HIT-NAKAMU</span>.</h2>
                 </div>
                 <div class="hero-image-wrapper">
-                    <!-- アップロードされた写真を指定 -->
                     <img src="IMG_6099.jpeg" alt="HIT-NAKAMU" class="hero-img">
                 </div>
             </div>
         </section>
 
-        <!-- WORK セクション -->
         <section id="work" class="scroll-reveal">
             <h3 class="section-title">WORK</h3>
             <div class="custom-card">
                 <h4>経歴</h4>
                 <ul class="original-list" style="color: #b0b0b0;">
                     <li>自動車メーカー勤務</li>
-                    <li>スマートホーム化検討、実施</li>
-                    <li>当サイトの作成、運用</li>
                 </ul>
             </div>
         </section>
 
-        <!-- IAI セクション -->
         <section id="iai" class="scroll-reveal">
             <h3 class="section-title">IAI (居合道)</h3>
             <div class="custom-card">
@@ -401,16 +391,14 @@
             </div>
         </section>
 
-        <!-- MUSIC セクション -->
         <section id="music" class="scroll-reveal">
             <h3 class="section-title">MUSIC</h3>
             <div class="custom-card">
                 <h4>音楽について</h4>
-                <p style="color: #b0b0b0;">フレンチホルンを吹いています。クラシック音楽が特に好きです。</p>
+                <p style="color: #b0b0b0;">幼少からピアノ、中学からトランペット、高校から指揮、をやってきました。</p>
             </div>
         </section>
 
-        <!-- SAKE セクション (日本酒ログ) -->
         <section id="sake" class="scroll-reveal">
             <h3 class="section-title">SAKE</h3>
             <div class="sake-grid">
@@ -429,16 +417,12 @@
             </div>
         </section>
 
-        <!-- フッター -->
         <footer style="text-align: center; padding: 4rem 2rem; color: #555; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.02);">
             <p>&copy; 2026 HIT-NAKAMU. All Rights Reserved.</p>
         </footer>
 
     </div>
 
-    <!-- ==========================================================================
-       7. JavaScript制御（一閃タイマー & スクロールフェードイン）
-       ========================================================================== */ -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // 一閃アニメーション終了後にコンテンツを表示
