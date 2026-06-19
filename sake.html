@@ -3,170 +3,400 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お酒 - Hitoshi</title>
+    <title>SAKE | Hitoshi's Portfolio</title>
+    <!-- Google Fonts: Noto Serif JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;600;900&display=swap" rel="stylesheet">
+    
     <style>
+        /* ==========================================================================
+           1. 共通変数 & リセットCSS
+           ========================================================================== */
         :root {
-            --bg-color: #121212;
-            --text-color: #e0e0e0;
-            --accent-color: #c9a063;
-            --card-bg: #1e1e1e;
+            --bg-color: #121212;        /* 漆黒・墨色 */
+            --card-bg: #1c1c1c;         /* 薄い墨色 */
+            --text-color: #e0e0e0;      /* 基本文字色 */
+            --accent-gold: #c9a063;     /* 落ち着いたゴールド */
+            --accent-red: #8b0000;      /* 差し色の朱赤・深紅 */
+            --font-serif: 'Noto Serif JP', serif;
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
+            font-family: var(--font-serif);
             line-height: 1.8;
-            margin: 0;
-            padding: 0;
             overflow-x: hidden;
-        }
-        header {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 30px 20px 10px 20px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
-        header h1 {
-            color: #ffffff;
-            margin: 0;
-            font-size: calc(1.5rem + 0.5vw);
-            letter-spacing: 0.1em;
-        }
-        .back-link {
-            color: var(--accent-color);
+
+        a {
+            color: inherit;
             text-decoration: none;
-            font-size: 0.9rem;
+            transition: color 0.3s ease;
         }
-        main {
+
+        /* 全体のコンテンツフェードイン */
+        .fade-in-content {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: page-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+            width: 100%;
             max-width: 800px;
-            margin: 10px auto 60px auto;
-            padding: 0 15px;
-            box-sizing: border-box;
+            padding: 0 20px;
         }
-        @keyframes pageFadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+
+        @keyframes page-reveal {
             to { opacity: 1; transform: translateY(0); }
         }
-        .animate-section {
-            animation: pageFadeIn 1.2s ease-out forwards;
-        }
-        section {
-            background-color: var(--card-bg);
-            padding: 35px;
-            margin-bottom: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            border-left: 4px solid var(--accent-color);
-        }
-        h2 {
-            color: #ffffff;
-            font-size: 1.3rem;
-            margin-top: 0;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .sake-banner {
+
+        /* ==========================================================================
+           2. ヘッダー & 戻るリンク
+           ========================================================================== */
+        header {
+            padding: 60px 0 30px 0;
             width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 6px;
-            margin-bottom: 25px;
-            border: 1px solid #333;
         }
-        .sake-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 12px;
-            padding: 0;
-            list-style: none;
-            margin: 20px 0;
-        }
-        .sake-item {
-            background-color: #252525;
-            padding: 12px;
-            border-radius: 4px;
-            text-align: center;
-            border: 1px solid #333;
-            font-weight: bold;
-            color: #ffffff;
+
+        .back-link {
             font-size: 0.9rem;
+            color: var(--accent-gold);
+            display: inline-block;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 4px;
         }
-        .bottom-nav {
-            border: none !important;
-            background: transparent !important;
-            box-shadow: none !important;
-            padding: 20px 0 !important;
-            text-align: center;
+
+        .back-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--accent-gold);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
         }
-        .bottom-nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+
+        .back-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
             margin-top: 10px;
         }
-        .bottom-nav-links a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-size: 0.95rem;
+
+        main {
+            width: 100%;
+            padding-bottom: 100px;
         }
-        @media (max-width: 480px) {
-            section { padding: 20px; }
-            .sake-list { grid-template-columns: repeat(2, 1fr); }
+
+        /* ==========================================================================
+           3. 日本酒への想い（トップ画像＋自己紹介セクション）
+           ========================================================================== */
+        .intro-section {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(201, 160, 99, 0.2);
+            border-left: 3px solid var(--accent-gold);
+            margin-bottom: 60px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            overflow: hidden; /* 画像の角を丸めるため */
+        }
+
+        /* トップのメイン画像エリア */
+        .intro-main-img-wrapper {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(201, 160, 99, 0.2);
+        }
+
+        .intro-main-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            filter: contrast(105%);
+        }
+
+        /* 文章コンテンツエリア */
+        .intro-body {
+            padding: 35px 40px;
+        }
+
+        /* 四隅の朱赤フレーム演出 */
+        .intro-section::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 15px;
+            height: 15px;
+            border-top: 2px solid var(--accent-red);
+            border-left: 2px solid var(--accent-red);
+            z-index: 10;
+        }
+
+        .intro-section::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            right: -3px;
+            width: 15px;
+            height: 15px;
+            border-bottom: 2px solid var(--accent-red);
+            border-right: 2px solid var(--accent-red);
+            z-index: 10;
+        }
+
+        .intro-section h2 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid #333;
+            padding-bottom: 12px;
+        }
+
+        .intro-section p {
+            color: #bbbbbb;
+            font-size: 0.95rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ==========================================================================
+           4. 各銘柄のログ（区切りタイトルとリスト）
+           ========================================================================== */
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            letter-spacing: 0.2em;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 2px solid var(--accent-red);
+        }
+
+        .sake-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sake-card {
+            background-color: var(--card-bg);
+            border: 1px solid #2a2a2a;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .sake-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(201, 160, 99, 0.4);
+        }
+
+        .sake-img-wrapper {
+            width: 100%;
+            height: 100%;
+            min-height: 200px;
+            overflow: hidden;
+            background-color: #151515;
+        }
+
+        .sake-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(105%) grayscale(10%);
+            transition: transform 0.5s ease;
+        }
+
+        .sake-card:hover .sake-img {
+            transform: scale(1.03);
+        }
+
+        .sake-content {
+            padding: 20px 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sake-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        .sake-name {
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .sake-stars {
+            color: var(--accent-gold);
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .sake-description {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            flex-grow: 1;
+        }
+
+        .sake-taste-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .taste-tag {
+            font-size: 0.7rem;
+            background-color: rgba(201, 160, 99, 0.05);
+            color: var(--accent-gold);
+            padding: 1px 8px;
+            border: 1px solid rgba(201, 160, 99, 0.15);
+        }
+
+        .sake-date {
+            font-size: 0.8rem;
+            color: #666;
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        /* ==========================================================================
+           5. レスポンシブ対応
+           ========================================================================== */
+        @media (max-width: 640px) {
+            .intro-main-img-wrapper {
+                height: 220px;
+            }
+            .intro-body {
+                padding: 25px 20px;
+            }
+            .sake-card {
+                grid-template-columns: 1fr;
+            }
+            .sake-img-wrapper {
+                height: 180px;
+                min-height: auto;
+            }
+            .sake-content {
+                padding: 20px;
+            }
+            .sake-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 30px 20px;
+            color: #555;
+            font-size: 0.8rem;
+            text-align: center;
+            width: 100vw;
+            box-sizing: border-box;
+            border-top: 1px solid #1a1a1a;
+            background-color: #0d0d0d;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Sake / お酒</h1>
-        <a href="index.html" class="back-link">← トップへ戻る</a>
-    </header>
+    <div class="fade-in-content">
 
-    <main class="animate-section">
-        <img src="IMG_7568.png" alt="Japanese Sake" class="sake-banner">
+        <header>
+            <a href="index.html" class="back-link">← ポートフォリオに戻る</a>
+            <h1>お酒 / SAKE</h1>
+        </header>
 
-        <section>
-            <h2>日々の終わりに、日本酒を味わう贅沢な時間</h2>
-            <p>我が家にとって日本酒は、夫婦共通のいちばんの趣味です。週末はもちろん、日々の仕事や家事が一段落したあとに、新しく手に入れた一本を夫婦で開けて「これはすっきりしていて美味しいね」「この料理にすごく合う！」などと語り合う時間を何より大切にしています。</p>
-            <p>ただ飲むだけでなく、そのお酒が作られた地域の気候、蔵人さんのこだわり、その日の器や料理との相性をあれこれ探求するのが、とても楽しくて心地よい時間になっています。</p>
-        </section>
-
-        <section style="background: linear-gradient(180deg, #1e1e1e 0%, #1c221a 100%);">
-            <h2>夫婦のたいせつな思い出：越後湯沢サプライズ旅</h2>
-            <p>これまでの日本酒にまつわるお話の中で、いまも夫婦でよく話題に上る最高の思い出があります。それは、私の誕生日に妻が企画してくれたサプライズ旅行です。</p>
-            <p>当日、私はどこに行くのか一切知らされないまま新幹線に乗せられ、たどり着いた先は一面の雪国・新潟の「越後湯沢」でした。駅にある有名な「ぽんしゅ館」でいろいろな銘酒をワクワクしながらテイスティングしたり、地元の酒屋さんをのんびり巡って隠れた地酒を探したり。お酒そのものの美味しさはもちろんですが、その旅の空気感や妻の優しいおもてなしを含めて、日本酒がもっと大好きになる忘れられない1日になりました。</p>
-        </section>
-
-        <section>
-            <h2>一期一会の出会いを楽しんだ銘柄たち</h2>
-            <p>我が家ではお酒のコレクションはせず、「買ってきたら新鮮なうちに、その一期一会の味わいをすぐ楽しむ！」のがお決まりのスタイルです。これまでに夫婦で囲み、それぞれの個性を楽しんできたお気に入りの銘柄たちをご紹介します。</p>
+        <main>
             
-            <ul class="sake-list">
-                <li class="sake-item">田酒</li>
-                <li class="sake-item">鳳凰美田</li>
-                <li class="sake-item">花邑</li>
-                <li class="sake-item">まんさくの花</li>
-                <li class="sake-item">十四代</li>
-                <li class="sake-item">獺祭</li>
-            </ul>
-            
-            <p style="margin-top: 25px;">実は、これほどたくさんの素晴らしいお酒を飲んできても、「これが人生を完全に変えた運命の1本だ！」と言い切れる究極のボトルには、まだ出会っていません。</p>
-            <p>でも、だからこそ面白いのだと思っています。これからも妻と一緒に「まだ見ぬ最高の1本」をのんびり探し、美味しい料理と合わせては語り合う。その果てしない旅路そのものこそが、我が家にとって何よりの贅沢で、暮らしを豊かにしてくれる大切なスパイスです。</p>
-        </section>
-
-        <section class="bottom-nav">
-            <p style="font-size: 0.9rem; color: #888; margin: 0;">他のページを見る</p>
-            <div class="bottom-nav-links">
-                <a href="work.html">仕事 💼</a>
-                <a href="iai.html">居合 ⚔️</a>
-                <a href="music.html">音楽 🎺</a>
-                <a href="index.html" style="color: #888;">トップ 🏠</a>
+            <!-- 🍶 トップ画像＋自己紹介が融合した重厚セクション -->
+            <div class="intro-section">
+                <!-- image_10.pngに写っていた晩酌の画像（トップ写真）をここに指定 -->
+                <div class="intro-main-img-wrapper">
+                    <img src="IMG_7568.png" alt="日々の終わりに、日本酒を味わう贅沢な時間" class="intro-main-img">
+                </div>
+                
+                <div class="intro-body">
+                    <h2>日々の終わりに、日本酒を味わう贅沢な時間</h2>
+                    <p>我が家にとって日本酒は、夫婦共通のいちばんの趣味です。週末はもちろん、日々の仕事や家事が一段落したあとに、新しく手に入れた一本を夫婦で開けて「これはすっきりしていて美味しいね」「この料理にすごく合う！」などと語り合う時間を何より大切にしています。</p>
+                    <p>ただ飲むだけでなく、そのお酒が作られた地域の気候、蔵人さんのこだわり、その日の器や料理との相性をあれこれ探求するのが、とても楽しくて心地よい時間になっています。</p>
+                </div>
             </div>
-        </section>
-    </main>
+
+            <!-- 一期一会の記録（銘柄ログ） -->
+            <h3 class="section-subtitle">一期一会の記録</h3>
+            
+            <div class="sake-list">
+
+                <!-- ログアイテム1 -->
+                <div class="sake-card">
+                    <div class="sake-img-wrapper">
+                        <!-- ここは新しく追加していく別のお酒の写真用（なければ自動で[写真未設定]と出ます） -->
+                        <img src="next_sake.png" alt="日本酒" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100%; height:100%; justify-content:center; align-items:center; color:#444; font-size:0.8rem;">[ 写真未設定 ]</div>
+                    </div>
+                    <div class="sake-content">
+                        <div class="sake-header">
+                            <h4 class="sake-name">銘柄名をここに記載</h4>
+                            <span class="sake-stars">★★★★★</span>
+                        </div>
+                        <p class="sake-description">
+                            ここに新しく飲んだ日本酒の感想や、合わせた料理のメモなどを自由に書き足していけます。
+                        </p>
+                        <div class="sake-taste-tags">
+                            <span class="taste-tag">すっきり</span>
+                            <span class="taste-tag">薫酒</span>
+                        </div>
+                        <span class="sake-date">2026.06.19</span>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <footer>
+            &copy; 2026 Hitoshi. All Rights Reserved.
+        </footer>
+
+    </div>
+
 </body>
 </html>
