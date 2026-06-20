@@ -230,16 +230,19 @@
             position: relative;
         }
 
+        /* ポップアップ対象になるお酒画像（クリック用エフェクトを追加） */
         .sake-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             filter: contrast(102%);
-            transition: transform 0.5s ease;
+            transition: transform 0.5s ease, filter 0.3s ease;
+            cursor: zoom-in; /* マウスホバーで虫眼鏡マークに */
         }
 
         .sake-card:hover .sake-img {
             transform: scale(1.03);
+            filter: contrast(105%) brightness(1.1);
         }
 
         .sake-content {
@@ -292,6 +295,54 @@
             padding: 2px 10px;
             border: 1px solid rgba(201, 160, 99, 0.2);
             border-radius: 3px;
+        }
+
+        /* ==========================================================================
+           【新規追加】お酒ギャラリー用ポップアップ（モーダル）のCSS
+           ========================================================================== */
+        .sake-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(18, 18, 18, 0.95); /* 世界観に合わせた漆黒背景 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sake-modal-overlay.is-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .sake-modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        .sake-modal-img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border: 1px solid rgba(201, 160, 99, 0.3); /* 金色の極薄フレーム */
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+            transform: scale(0.95);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sake-modal-overlay.is-active .sake-modal-img {
+            transform: scale(1);
+        }
+        .sake-modal-hint {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 15px;
+            letter-spacing: 0.1em;
+            opacity: 0.6;
         }
 
         /* ==========================================================================
@@ -361,7 +412,6 @@
             <h3 class="section-subtitle">一期一会の記録</h3>
             
             <div class="sake-list">
-
                 <div class="sake-card">
                     <div class="sake-img-wrapper">
                         <img src="images/sake/IMG_6505.jpeg" alt="新政 陽乃鳥 / 亜麻猫" class="sake-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -373,7 +423,7 @@
                             <span class="sake-stars">★★★★★</span>
                         </div>
                         <p class="sake-description">
-                            秋田の革新的な蔵元・新政酒造の贅沢な2本並べ。貴醸酒である「陽乃鳥」の濃密でマンゴーのような甘みと、白麹仕込みの「亜麻猫」が持つ柑橘系の突き抜けるような酸味。この全く異なるふたつの個性を夫婦で少しずつグラスに注ぎ、交互に飲み比べながら、その奥深い世界観に酔いしれる贅沢な夜でした。
+                            秋田の革新的な蔵元・新政酒造 chimneys の贅沢な2本並べ。貴醸酒である「陽乃鳥」の濃密でマンゴーのような甘みと、白麹仕込みの「亜麻猫」が持つ柑橘系の突き抜けるような酸味。この全く異なるふたつの個性を夫婦で少しずつグラスに注ぎ、交互に飲み比べながら、その奥深い世界観に酔いしれる贅沢な夜でした。
                         </p>
                         <div class="sake-taste-tags">
                             <span class="taste-tag">貴醸酒・白麹</span>
@@ -457,7 +507,7 @@
                             <span class="sake-stars">★★★★★</span>
                         </div>
                         <p class="sake-description">
-                            日本酒の最高峰ブランド・十四代の、希少米「愛山」を使用した純米大吟醸。原価酒蔵で見つけて迷わず注文した一杯です。愛山特有 of 妖艶で濃厚な甘みと旨みが一瞬で口の中を満たし、その後はまるで手品のようにスッと消えていく完璧なキレ。圧倒的な完成度に、夫婦でただただ感嘆するばかりでした。
+                            日本酒の最高峰ブランド・十四代の、希少米「愛山」を使用した純米大吟醸。原価酒蔵で見つけて迷わず注文した一杯です。愛山特有の妖艶で濃厚な甘みと旨みが一瞬で口の中を満たし、その後はまるで手品のようにスッと消えていく完璧なキレ。圧倒的な完成度に、夫婦でただただ感嘆するばかりでした。
                         </p>
                         <div class="sake-taste-tags">
                             <span class="taste-tag">純米大吟醸</span>
@@ -580,6 +630,40 @@
         </footer>
 
     </div>
+
+    <div class="sake-modal-overlay" id="sakeImageModal">
+        <div class="sake-modal-content">
+            <img src="" alt="拡大画像" class="sake-modal-img" id="sakeModalImg">
+            <div class="sake-modal-hint">画面のどこかをタップすると戻ります</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('sakeImageModal');
+            const modalImg = document.getElementById('sakeModalImg');
+            const sakeImages = document.querySelectorAll('.sake-img');
+
+            // 1. お酒ログの画像がタップされたらモーダルを起動
+            sakeImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    modalImg.src = img.src; // タップした画像のURLを複製
+                    modalImg.alt = img.alt;
+                    modal.classList.add('is-active'); // ポップアップを表示
+                    document.body.style.overflow = 'hidden'; // 背後のスクロールを固定
+                });
+            });
+
+            // 2. モーダルのどこをタップしても閉じる処理
+            modal.addEventListener('click', () => {
+                modal.classList.remove('is-active'); // モーダルを非表示
+                document.body.style.overflow = ''; // スクロール固定を解除
+                
+                // 閉じるアニメーション（0.35秒）が終わった頃にsrcを空にして残像を防ぐ
+                setTimeout(() => { modalImg.src = ''; }, 350);
+            });
+        });
+    </script>
 
 </body>
 </html>
